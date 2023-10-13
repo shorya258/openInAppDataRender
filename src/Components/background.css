@@ -1,0 +1,20 @@
+.background-style{
+background-color: rgb(248,250,255);
+}
+.left-panel{
+background-image: url(/src/Components/assets/Left\ side.png);
+height: 10vh;
+width: 50%;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+  }
+.board{
+  position: relative;
+  margin: auto;
+}  
+.icons-row{
+  position: absolute;
+  margin-left: 1rem;
+ bottom: 5%; 
+}
