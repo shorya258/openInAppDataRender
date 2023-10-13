@@ -1,12 +1,12 @@
 import { useState } from "react";
 import React from "react";
-
 function Signup(props) {
   const [credentials, setCredentials] = useState({
     name: "",
     email: "",
     password: "",
   });
+  const [showAccountCreated, setShowAccountCreated] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await fetch("http://localhost:5000/api/signup", {
@@ -25,6 +25,13 @@ function Signup(props) {
     if (!json.success) {
       alert("enter valid credentials");
     }
+
+    setTimeout(() => {
+      setShowAccountCreated(true);
+      setTimeout(() => {
+        props.handleIsLoginChange();
+      }, 1500);
+    }, 1500);
   };
   const onChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
@@ -108,6 +115,11 @@ function Signup(props) {
         >
           Submit
         </button>
+        {showAccountCreated && (
+          <div>
+            <p>Account Created!</p>
+          </div>
+        )}
       </form>
       <button className="" onClick={props.handleIsLoginChange}>
         New user?
