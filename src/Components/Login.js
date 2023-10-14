@@ -106,7 +106,11 @@ function Login(props) {
         </form>
       </div>
       <div className="sign-up-link">
-        <p>Don't have an account?</p><a onClick={props.handleIsLoginChange}> Register here</a>
+        <p>Don't have an account?</p>
+        <a onClick={props.handleIsLoginChange} style={{ cursor: "pointer" }}>
+          {" "}
+          Register here
+        </a>
       </div>
     </div>
   );

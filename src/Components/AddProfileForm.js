@@ -11,17 +11,30 @@ function AddProfileForm(props) {
   });
   const handleSubmit = async () => {
     let userEmail = localStorage.getItem("userEmail");
-    let response = await fetch("http://localhost:4000/api/newProfileData", {
+    let reqData = {
+      email: userEmail,
+      profile_data: newProfileCredentials,
+    };
+    console.log(reqData);
+    let response = await fetch("http://localhost:5000/api/profileData", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        email: userEmail,
-        newProfile_data: newProfileCredentials,
-      }),
+      body: JSON.stringify(reqData),
     });
     console.log("order response::::", response);
+
+    // SEND THIS PROFILE OBJ TO BACKEND
+    // let res = await fetch("http://localhost:5000/api/findProfileByEmail", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({ email: reqData.email }),
+    // });
+
+    // console.log("res:::", res);
     props.onClose();
   };
   const onChange = (e) => {
@@ -145,7 +158,7 @@ function AddProfileForm(props) {
                   <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-black-600 sm:max-w-md">
                     <input
                       type="text"
-                      name="iglink"
+                      name="ig_link"
                       required
                       onChange={onChange}
                       value={newProfileCredentials.ig_link || ""}
@@ -169,7 +182,7 @@ function AddProfileForm(props) {
                   <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-black-600 sm:max-w-md">
                     <input
                       type="text"
-                      name="email"
+                      name="yt_link"
                       required
                       onChange={onChange}
                       value={newProfileCredentials.yt_link || ""}

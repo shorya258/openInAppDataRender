@@ -10,7 +10,7 @@ router.post("/profileData", async (req, res) => {
       await profile
         .create({
           email: req.body.email,
-          profile_data: [data],
+          profile_data: data,
         })
         .then(() => {
           res.json({ success: true });
@@ -22,10 +22,7 @@ router.post("/profileData", async (req, res) => {
   } else {
     try {
       await profile
-        .findOneAndUpdate(
-          { email: req.body.email },
-          { $push: { profile_data: data } }
-        )
+        .findOneAndUpdate({ email: req.body.email }, { profile_data: data })
         .then(() => {
           res.json({ success: true });
         });

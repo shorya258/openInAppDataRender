@@ -6,7 +6,7 @@ const newProfileSchema = new Schema({
     required: true,
   },
   profile_data: {
-    type: Array,
+    type: Object,
     required: false,
   },
 });
