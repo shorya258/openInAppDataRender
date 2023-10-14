@@ -39,8 +39,8 @@ function Signup(props) {
   return (
     <div className="sign-in-panel">
       <div className="sign-in-header">
-        <h1 className="font-bold text-3xl">Sign Up</h1>
-        <p className="font-medium">Create an account</p>
+        <h1 className="text-3xl">Sign Up</h1>
+        <p>Create an account</p>
       </div>
       <div className="mt-6 sign-in-form-wrapper flex flex-col content-wrapper p-7">
       <form>
@@ -49,7 +49,7 @@ function Signup(props) {
           <div className="sm:col-span-6">
             <label
               htmlFor="name"
-              className="block text-sm font-medium leading-6 text-gray-900"
+              className="sign-in-label block text-sm font-medium leading-6 text-gray-900"
             >
               Full Name
             </label>
@@ -69,7 +69,7 @@ function Signup(props) {
           <div className="sm:col-span-6">
             <label
               htmlFor="email"
-              className="block text-sm font-medium leading-6 text-gray-900"
+              className="sign-in-label block text-sm font-medium leading-6 text-gray-900"
             >
               Email
             </label>
@@ -89,7 +89,7 @@ function Signup(props) {
           <div className="sm:col-span-6">
             <label
               htmlFor="password"
-              className="block text-sm font-medium leading-6 text-gray-900"
+              className="sign-in-label block text-sm font-medium leading-6 text-gray-900"
             >
               Password
             </label>

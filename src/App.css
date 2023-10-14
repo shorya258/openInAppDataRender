@@ -1,0 +1,7 @@
+:root {
+  --second-font : 'Lato', sans-serif;
+  --logo-font : "Poppins", sans-serif;
+}
+* {
+  font-family: 'Montserrat', sans-serif;
+}
