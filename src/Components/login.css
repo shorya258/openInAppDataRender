@@ -1,3 +1,68 @@
 .content-wrapper{
     background: white;
 }
+.sign-in-panel {
+    /* background-color: red; */
+    max-width: 400px;
+    margin: auto;
+}
+.sign-in-header > h1 {
+    margin-bottom: 0.5rem;
+}
+.g-sign-in-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.g-sign-in-wrapper > button {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    border-radius: 1rem !important;
+    box-shadow: none !important;
+}
+.g-sign-in-wrapper span {
+    color: #949494 !important;
+}
+.sign-in-form-wrapper {
+    border-radius: 1rem;
+}
+.sign-in-input { 
+    border-radius: 0.5rem;
+    /* background-color: red; */
+}
+.sign-in-input > input {
+    width: 100%;
+    border-radius: inherit;
+    background-color: #f5f5f5;
+    padding-left: 1rem;
+    font-weight: 600;
+}
+.sign-in-input > input:focus {
+    background-color: #eaeaea;
+}
+.forgot-password {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: #4285f4;
+    font-weight: 600;
+}
+
+.sign-in-btn {
+    width: 100%;
+    background-color: #4285f4;
+    border-radius: 0.5rem;
+}
+
+.sign-up-link {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.sign-up-link > p {
+    color: #939394;
+}
+.sign-up-link > a {
+    color: #4285f4;
+    margin-left: 2px;
+}
