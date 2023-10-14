@@ -1,6 +1,7 @@
 .content-wrapper{
     background: white;
 }
+
 .sign-in-panel {
     /* background-color: red; */
     max-width: 400px;
@@ -8,7 +9,8 @@
 }
 .sign-in-header > h1 {
     margin-bottom: 0.5rem;
-    font-family: mainFont;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
 }
 .g-sign-in-wrapper {
     display: flex;
