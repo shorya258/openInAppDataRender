@@ -1,0 +1,9 @@
+.add-profile-wrapper {
+    height: auto;
+    width:auto;
+    border:solid black 1px;
+}
+.add-profile-wrapper button img{
+    width: 100%;
+    height: auto;
+}

@@ -1,0 +1,135 @@
+[
+  {
+    "coord": {
+      "lon": 76.4,
+      "lat": 28.5
+    },
+    "weather": [
+      {
+        "id": 800,
+        "main": "Clear",
+        "description": "clear sky",
+        "icon": "01n"
+      }
+    ],
+    "base": "stations",
+    "main": {
+      "temp": 300.01,
+      "feels_like": 299.34,
+      "temp_min": 300.01,
+      "temp_max": 300.01,
+      "pressure": 1011,
+      "humidity": 26,
+      "sea_level": 1011,
+      "grnd_level": 986
+    },
+    "visibility": 10000,
+    "wind": {
+      "speed": 0.67,
+      "deg": 308,
+      "gust": 0.86
+    },
+    "clouds": {
+      "all": 0
+    },
+    "dt": 1697227255,
+    "sys": {
+      "country": "IN",
+      "sunrise": 1697244837,
+      "sunset": 1697286409
+    },
+    "timezone": 19800,
+    "id": 1274571,
+    "name": "Charkhi Dādri",
+    "cod": 200
+  },
+  {
+    "coord": {
+      "lon": 77.4,
+      "lat": 23.2
+    },
+    "weather": [
+      {
+        "id": 802,
+        "main": "Clouds",
+        "description": "scattered clouds",
+        "icon": "03d"
+      }
+    ],
+    "base": "stations",
+    "main": {
+      "temp": 306.3,
+      "feels_like": 304.4,
+      "temp_min": 306.3,
+      "temp_max": 306.3,
+      "pressure": 1015,
+      "humidity": 22
+    },
+    "visibility": 6000,
+    "wind": {
+      "speed": 2.57,
+      "deg": 190
+    },
+    "clouds": {
+      "all": 40
+    },
+    "dt": 1697273928,
+    "sys": {
+      "type": 1,
+      "id": 9063,
+      "country": "IN",
+      "sunrise": 1697244387,
+      "sunset": 1697286379
+    },
+    "timezone": 19800,
+    "id": 1275841,
+    "name": "Bhopal",
+    "cod": 200
+  },
+  {
+    "coord": {
+      "lon": 10.99,
+      "lat": 44.34
+    },
+    "weather": [
+      {
+        "id": 803,
+        "main": "Clouds",
+        "description": "broken clouds",
+        "icon": "04n"
+      }
+    ],
+    "base": "stations",
+    "main": {
+      "temp": 288.53,
+      "feels_like": 288.16,
+      "temp_min": 286.63,
+      "temp_max": 290.4,
+      "pressure": 1020,
+      "humidity": 78,
+      "sea_level": 1020,
+      "grnd_level": 935
+    },
+    "visibility": 10000,
+    "wind": {
+      "speed": 3.07,
+      "deg": 209,
+      "gust": 4.64
+    },
+    "clouds": {
+      "all": 66
+    },
+    "dt": 1697226313,
+    "sys": {
+      "type": 2,
+      "id": 2004688,
+      "country": "IT",
+      "sunrise": 1697174858,
+      "sunset": 1697215008
+    },
+    "timezone": 7200,
+    "id": 3163858,
+    "name": "Zocca",
+    "cod": 200
+  }
+]

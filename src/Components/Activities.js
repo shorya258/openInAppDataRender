@@ -12,20 +12,26 @@ import { Bar } from "react-chartjs-2";
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
-function Activities() {
+function Activities(props) {
+  let city1name = props.city1name;
+  let city2name = props.city2name;
+  let city3name = props.city3name;
+  let city1temp = [props.city1data.temp_min, props.city1data.temp_max];
+  let city2temp = [props.city2data.temp_min, props.city2data.temp_max];
+  let city3temp = [props.city3data.temp_min, props.city3data.temp_max];
   const data = {
-    labels: ["week 1", "week 2", "week 3", "week 4", "week 5"],
+    labels: [city1name, city2name, city3name],
     datasets: [
       {
-        label: "user",
-        data: [3, 6, 7, 2.4, 5],
+        label: "Max temperature",
+        data: [city1temp[0], city2temp[0], city3temp[0]],
         backgroundColor: " rgba(152, 216, 158, 1)",
         borderColor: "white",
         borderWidth: "1",
       },
       {
-        label: "Guest",
-        data: [3, 9, 2, 5, 3],
+        label: "Min temperature",
+        data: [city1temp[1], city2temp[1], city3temp[1]],
         backgroundColor: " rgba(238, 132, 132, 1)",
         borderColor: "white",
         borderWidth: "1",
@@ -35,11 +41,13 @@ function Activities() {
   const options = {};
   return (
     <div>
-      <Bar
-        style={{ padding: "1rem", width: "80%" }}
-        data={data}
-        options={options}
-      ></Bar>
+      <div>
+        <Bar
+          style={{ padding: "1rem", width: "80%" }}
+          data={data}
+          options={options}
+        ></Bar>
+      </div>
     </div>
   );
 }
