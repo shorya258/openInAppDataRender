@@ -17,6 +17,7 @@ app.get("/", (req, res, next) => {
 
 app.use(express.json());
 app.use("/api", require("./routes/auth"));
+app.use("/api", require("./routes/addProfile"));
 app.get("/", (req, res) => {
   res.send("Hello worlddd");
 });

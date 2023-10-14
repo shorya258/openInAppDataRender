@@ -2,6 +2,34 @@ import React, { useState } from "react";
 
 function AddProfileForm(props) {
   const [toggleBasicToSocial, setToggleBasicToSocial] = useState(true);
+  const [newProfileCredentials, setNewProfileCredentials] = useState({
+    name: "",
+    email: "",
+    ph_number: "",
+    ig_link: "",
+    yt_link: "",
+  });
+  const handleSubmit = async () => {
+    let userEmail = localStorage.getItem("userEmail");
+    let response = await fetch("http://localhost:4000/api/newProfileData", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: userEmail,
+        newProfile_data: newProfileCredentials,
+      }),
+    });
+    console.log("order response::::", response);
+    props.onClose();
+  };
+  const onChange = (e) => {
+    setNewProfileCredentials({
+      ...newProfileCredentials,
+      [e.target.name]: e.target.value,
+    });
+  };
   return (
     <div className="m-2 p-2">
       <h2 className="font-bold">Add New Profile</h2>
@@ -45,8 +73,8 @@ function AddProfileForm(props) {
                         type="text"
                         name="name"
                         required
-                        //   onChange={onChange}
-                        //   value={credentials.name}
+                        onChange={onChange}
+                        value={newProfileCredentials.name || ""}
                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                         placeholder="Eg John Doe"
                       />
@@ -68,8 +96,8 @@ function AddProfileForm(props) {
                         type="text"
                         name="email"
                         required
-                        //   onChange={onChange}
-                        //   value={credentials.email}
+                        onChange={onChange}
+                        value={newProfileCredentials.email || ""}
                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                         placeholder="Eg John@xyz.com"
                       />
@@ -79,7 +107,7 @@ function AddProfileForm(props) {
                 {/* Phone Number */}
                 <div className="sm:col-span-4">
                   <label
-                    htmlFor="phnumber"
+                    htmlFor="ph_number"
                     className="block text-sm font-medium leading-6 text-gray-900"
                   >
                     Enter Phone
@@ -88,10 +116,10 @@ function AddProfileForm(props) {
                     <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-black-600 sm:max-w-md">
                       <input
                         type="text"
-                        name="phnumber"
+                        name="ph_number"
                         required
-                        //   onChange={onChange}
-                        //   value={credentials.name}
+                        onChange={onChange}
+                        value={newProfileCredentials.ph_number || ""}
                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                         placeholder="Eg. 987654321"
                       />
@@ -119,8 +147,8 @@ function AddProfileForm(props) {
                       type="text"
                       name="iglink"
                       required
-                      //   onChange={onChange}
-                      //   value={credentials.name}
+                      onChange={onChange}
+                      value={newProfileCredentials.ig_link || ""}
                       className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                       placeholder="Eg.instagram.com/username"
                     />
@@ -143,8 +171,8 @@ function AddProfileForm(props) {
                       type="text"
                       name="email"
                       required
-                      //   onChange={onChange}
-                      //   value={credentials.email}
+                      onChange={onChange}
+                      value={newProfileCredentials.yt_link || ""}
                       className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                       placeholder="youtube/username"
                     />
@@ -164,7 +192,7 @@ function AddProfileForm(props) {
       </button>
       <button
         className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black mt-2"
-        onClick={props.onClose}
+        onClick={handleSubmit}
       >
         Done
       </button>
