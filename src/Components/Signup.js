@@ -37,21 +37,23 @@ function Signup(props) {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
   return (
-    <div>
-      <h1 className="font-bold text-2xl">Sign Up</h1>
-      <p>Create an account</p>
+    <div className="sign-in-panel">
+      <div className="sign-in-header">
+        <h1 className="font-bold text-3xl">Sign Up</h1>
+        <p className="font-medium">Create an account</p>
+      </div>
+      <div className="sign-in-form-wrapper flex flex-col content-wrapper p-7">
       <form>
-        <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+        <div className="grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-6 mb-3">
           {/* FULL NAME */}
-          <div className="sm:col-span-4">
+          <div className="sm:col-span-6">
             <label
               htmlFor="name"
               className="block text-sm font-medium leading-6 text-gray-900"
             >
               Full Name
             </label>
-            <div className="mt-2">
-              <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-black-600 sm:max-w-md">
+            <div className="sign-in-input mt-2">
                 <input
                   type="text"
                   name="name"
@@ -60,20 +62,19 @@ function Signup(props) {
                   className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                   placeholder="Full Name"
                 />
-              </div>
             </div>
           </div>
 
           {/* EMAIL */}
-          <div className="sm:col-span-4">
+          <div className="sm:col-span-6">
             <label
               htmlFor="email"
               className="block text-sm font-medium leading-6 text-gray-900"
             >
               Email
             </label>
-            <div className="mt-2">
-              <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-black-600 sm:max-w-md">
+            <div className="sign-in-input mt-2">
+
                 <input
                   type="text"
                   name="email"
@@ -82,19 +83,17 @@ function Signup(props) {
                   className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                   placeholder="email@abc.com"
                 />
-              </div>
             </div>
           </div>
           {/* PASSWORD */}
-          <div className="sm:col-span-4">
+          <div className="sm:col-span-6">
             <label
               htmlFor="password"
               className="block text-sm font-medium leading-6 text-gray-900"
             >
               Password
             </label>
-            <div className="mt-2">
-              <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-black-600 sm:max-w-md">
+            <div className="sign-in-input mt-2">
                 <input
                   type="password"
                   name="password"
@@ -104,13 +103,12 @@ function Signup(props) {
                   className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                   placeholder="password"
                 />
-              </div>
             </div>
           </div>
         </div>
         <button
           type="submit"
-          className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black mt-2"
+          className="sign-in-btn rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black mt-2"
           onClick={handleSubmit}
         >
           Submit
@@ -121,9 +119,10 @@ function Signup(props) {
           </div>
         )}
       </form>
-      <button className="" onClick={props.handleIsLoginChange}>
-        New user?
-      </button>
+      </div>
+      <div className="sign-up-link">
+        <p>Already have an account?</p><a onClick={props.handleIsLoginChange}> Sign In here</a>
+      </div>
     </div>
   );
 }

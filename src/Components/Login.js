@@ -53,7 +53,7 @@ function Login(props) {
 
       <div className="sign-in-form-wrapper flex flex-col content-wrapper p-7">
         <form>
-          <div className=" grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-6">
+          <div className="grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-6">
             <div className="sm:col-span-6">
               <label
                 htmlFor="email"
@@ -67,7 +67,7 @@ function Login(props) {
                   name="email"
                   onChange={onChange}
                   value={credentials.email}
-                  className="block flex-1 border-0 py-1.5 pl-1 text-black-900 placeholder-black focus:ring-0 sm:text-sm sm:leading-6"
+                  className="block flex-1 border-0 py-1.5 pl-1 text-black-900 placeholder-gray focus:ring-0 sm:text-sm sm:leading-6"
                   placeholder="abc@xyz.com"
                 />
               </div>
@@ -86,7 +86,7 @@ function Login(props) {
                   onChange={onChange}
                   value={credentials.password}
                   autoComplete="password"
-                  className="block flex-1 border-0 py-1.5 pl-1 text-black-900 placeholder-black focus:ring-0 sm:text-sm sm:leading-6"
+                  className="block flex-1 border-0 py-1.5 pl-1 text-black-900 placeholder-gray focus:ring-0 sm:text-sm sm:leading-6"
                   placeholder="password"
                 />
               </div>
