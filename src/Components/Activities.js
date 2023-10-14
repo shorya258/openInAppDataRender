@@ -28,6 +28,7 @@ function Activities(props) {
         backgroundColor: " rgba(152, 216, 158, 1)",
         borderColor: "white",
         borderWidth: "1",
+        barThickness: 40
       },
       {
         label: "Min temperature",
@@ -35,19 +36,21 @@ function Activities(props) {
         backgroundColor: " rgba(238, 132, 132, 1)",
         borderColor: "white",
         borderWidth: "1",
+        barThickness: 40
       },
     ],
   };
-  const options = {};
+  const options = {
+  };
   return (
-    <div>
-      <div>
-        <Bar
-          style={{ padding: "1rem", width: "80%" }}
-          data={data}
-          options={options}
-        ></Bar>
-      </div>
+    <div className="rounded-xl shadow-xl">
+      <h1>Activities</h1>
+      <p>May - June 2021</p>
+      <Bar
+        className="bar-chart-wrapper"
+        data={data}
+        options={options}
+      ></Bar>
     </div>
   );
 }

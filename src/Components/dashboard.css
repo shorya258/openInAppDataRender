@@ -1,6 +1,4 @@
-.container{
-    height: 100vh;
-}
-.menu-wrapper{
-    width:20%
+.bar-chart-wrapper {
+    height: 300px !important;
+    /* width: 80% !important; */
 }

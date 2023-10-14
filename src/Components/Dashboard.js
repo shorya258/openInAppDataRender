@@ -22,20 +22,22 @@ function Dashboard() {
   // });
 
   return (
-    <div className="flex flex-row border-solid border-2 border-sky-500 container background-style ">
+    <div className="flex justify-between flex-row w-screen h-screen border-solid border-2 border-sky-500 background-style p-10">
       <div
-        className="menu  rounded-xl h-full text-white border-solid border-2 border-sky-500 menu-wrapper m-3"
+        className="w-2/12 menu rounded-xl h-100 text-white border-solid border-2 border-sky-500 mr-10"
         style={{ backgroundColor: "rgb(62, 132, 248)" }}
       >
-        <h1 className="text-4xl m-10">Board.</h1>
-        <p className="options text-2xl"></p>
-        <h2>Dashboard</h2>
-        <h2>Transactions</h2>
-        <h2>Schedules</h2>
-        <h2>Users</h2>
-        <h2>Settings</h2>
+        <div className="menu-items-wrapper my-10 px-8">
+        <h1 className="text-4xl">Board.</h1>
+        <div className="flex flex-col gap-5 my-10">
+          <h2>Dashboard</h2>
+          <h2>Transactions</h2>
+          <h2>Schedules</h2>
+          <h2>Users</h2>
+          <h2>Settings</h2>
+        </div></div>
       </div>
-      <div className="dashboard-wrapper border-solid border-2 border-sky-500 ">
+      <div className="w-10/12 dashboard-wrapper border-solid border-2 border-sky-500 ">
         <h1> Dashboard</h1>
         <div className=" flex flex-row item-cards-wrapper">
           <Itemscard content={"Total Resources"} />

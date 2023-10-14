@@ -21,7 +21,10 @@ function TopProducts() {
     // background: rgba(238, 132, 132, 1); RED
     // rgb(246,220,125) YELLOW
   };
-  const options = {};
+  const options = {
+    aspectRatio: 2,
+    cutout: 40
+  };
   return (
     <>
       <div>TopProducts</div>

@@ -42,7 +42,7 @@ function Login(props) {
     <div className="sign-in-panel">
       <div className="sign-in-header">
         <h1 className="text-3xl">Sign In</h1>
-        <p className="font-medium">Sign in to your account</p>
+        <p>Sign in to your account</p>
       </div>
       <div className="g-sign-in-wrapper">
         <GLogin />
@@ -57,7 +57,7 @@ function Login(props) {
             <div className="sm:col-span-6">
               <label
                 htmlFor="email"
-                className="block text-sm font-medium leading-6 text-gray-900"
+                className="sign-in-label block text-sm leading-6"
               >
                 Email address
               </label>
@@ -75,7 +75,7 @@ function Login(props) {
             <div className="sm:col-span-6">
               <label
                 htmlFor="password"
-                className="block text-sm font-medium leading-6 text-gray-900"
+                className="sign-in-label block text-sm leading-6"
               >
                 Password
               </label>

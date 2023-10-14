@@ -1,5 +1,5 @@
 .background-style{
-background-color: rgb(248,250,255);
+background-color: #F8FAFF;
 }
 
 .left-panel{
@@ -17,7 +17,8 @@ position: relative;
 }
 .logo > p {
   font-size: 1.2rem;
-  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
 }
 .heading{
   position: absolute;
@@ -27,7 +28,7 @@ position: relative;
 }
 .heading > p { 
   font-size: 4rem;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .icons-row{
