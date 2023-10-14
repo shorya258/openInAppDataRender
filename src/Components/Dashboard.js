@@ -5,8 +5,22 @@ import Activities from "./Activities";
 import TopProducts from "./TopProducts";
 import AddProfile from "./AddProfile";
 import SampleOutput from "./weather.json";
+// import { useEffect } from "react";
+// require("dotenv").config();
 function Dashboard() {
-  console.log(SampleOutput[0]);
+  // let API_KEY = "d28b937e8b237af8a5e4e15379047501";
+  // let API_KEY = process.env.REACT_APP_APIKEY;
+  // console.log(`${process.env.REACT_APP_APIKEY}`);
+  // const url = `https://api.openweathermap.org/data/2.5/weather?lat=23.2&lon=77.4&appid=${API_KEY}`;
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     let data = await fetch(url);
+  //     let parsedData = await data.json();
+  //     console.log("parsed data", parsedData);
+  //   }
+  //   fetchData();
+  // });
+
   return (
     <div className="flex flex-row border-solid border-2 border-sky-500 container background-style ">
       <div
