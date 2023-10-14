@@ -1,5 +1,6 @@
 import React from "react";
 import { createPortal } from "react-dom";
+import AddProfileForm from "./AddProfileForm";
 const MODAL_STYLES = {
   position: "fixed",
   top: "50%",
@@ -31,7 +32,7 @@ function ModalForm(props) {
         >
           X
         </button>
-        {/* {children} */}
+        <AddProfileForm onClose={props.onClose} />
       </div>
     </>,
     document.getElementById("profile-root")

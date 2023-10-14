@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import "./addprofile.css";
 import addProfile from "./assets/addProfile.png";
 import ModalForm from "./ModalForm";
+// import AddProfileForm from "./AddProfileForm";
 function AddProfile() {
   const [showProfileForm, setShowProfileForm] = useState(false);
   const handleAddProfile = () => {
     setShowProfileForm(true);
-    console.log("handle add profile");
   };
   const onClose = () => {
     setShowProfileForm(false);
@@ -26,7 +26,7 @@ function AddProfile() {
           <p>Add profile</p>
         </div>
       </button>
-      {showProfileForm && <ModalForm onClose={onClose} />}
+      {showProfileForm && <ModalForm onClose={onClose}></ModalForm>}
     </div>
   );
 }
