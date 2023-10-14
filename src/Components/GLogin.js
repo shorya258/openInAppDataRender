@@ -11,8 +11,6 @@ function GLogin() {
   //     console.log("LOGIN FAILED! res:", res);
   //   };
   return (
-    <div>
-      <div>
         <GoogleLogin
           clientId={clientId}
           buttonText="Sign in with Google"
@@ -21,8 +19,6 @@ function GLogin() {
           cookiePolicy="single_host_origin"
           isSignedIn={true}
         />
-      </div>
-    </div>
   );
 }
 
