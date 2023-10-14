@@ -1,3 +1,21 @@
 .content-wrapper{
     background: white;
 }
+.sign-in-panel {
+    /* background-color: red; */
+    max-width: 400px;
+    margin: auto;
+}
+.sign-in-header > h1 {
+    margin-bottom: 0.5rem;
+}
+.g-sign-in-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.sign-in-form-wrapper {
+    border-radius: 1rem;
+    box-shadow: 2px 2px 2px black;
+}

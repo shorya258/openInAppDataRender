@@ -15,7 +15,7 @@ function GLogin() {
       <div>
         <GoogleLogin
           clientId={clientId}
-          buttonText="Login"
+          buttonText="Sign in with Google"
           onSuccess={onSuccess}
           onFailure={(err) => console.log("fail", err)}
           cookiePolicy="single_host_origin"

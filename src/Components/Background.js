@@ -14,19 +14,18 @@ function Background() {
   };
   return (
     <div className="flex flex-row h-screen w-auto items-center place-content-center mx-auto background-style ">
-      <div className="left-panel  ">
-        <div>
+      <div className="left-panel">
+        <div className="logo">
           <p className="text-white">LOGO</p>
         </div>
-        <div>
-          <p className="text-white board">BOARD</p>
+        <div className="heading">
+          <p className="text-white">Board.</p>
         </div>
         <div className="icons-row">
           <img src={iconrow} alt="icon-row" />
         </div>
       </div>
-      <div className="right-panel ml-auto p-5  ">
-        {" "}
+      <div className="right-panel">
         {isLogin ? (
           <Login handleIsLoginChange={handleIsLoginChange} />
         ) : (

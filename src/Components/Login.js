@@ -39,15 +39,22 @@ function Login(props) {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
   return (
-    <>
+    <div className="sign-in-panel">
+      <div className="sign-in-header">
+        <h1 className="font-bold text-3xl">Sign In</h1>
+        <p className="font-medium">Sign in to your account</p>
+      </div>
+      <div className="g-sign-in-wrapper">
       <GLogin />
-      <GLogout />
+      <GLogin />
+      </div>
 
-      <div className="flex flex-col content-wrapper p-5">
-        <h1 className="font-bold text-2xl">Sign In</h1>
-        <p>Sign in to your account</p>
+      {/* <GLogout /> */}
+
+      <div className="sign-in-form-wrapper flex flex-col content-wrapper p-5">
+
         <form>
-          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+          <div className=" grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div className="sm:col-span-4">
               <label
                 htmlFor="email"
@@ -102,7 +109,7 @@ function Login(props) {
           New user?
         </button>
       </div>
-    </>
+    </div>
   );
 }
 
