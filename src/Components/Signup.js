@@ -42,7 +42,7 @@ function Signup(props) {
         <h1 className="font-bold text-3xl">Sign Up</h1>
         <p className="font-medium">Create an account</p>
       </div>
-      <div className="sign-in-form-wrapper flex flex-col content-wrapper p-7">
+      <div className="mt-6 sign-in-form-wrapper flex flex-col content-wrapper p-7">
       <form>
         <div className="grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-6 mb-3">
           {/* FULL NAME */}

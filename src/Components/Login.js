@@ -41,7 +41,7 @@ function Login(props) {
   return (
     <div className="sign-in-panel">
       <div className="sign-in-header">
-        <h1 className="font-bold text-3xl">Sign In</h1>
+        <h1 className="text-3xl">Sign In</h1>
         <p className="font-medium">Sign in to your account</p>
       </div>
       <div className="g-sign-in-wrapper">

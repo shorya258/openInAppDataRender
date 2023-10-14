@@ -1,3 +1,4 @@
-/* .left-panel{
-  background-image: url(/src/Components/assets/Left\ side.png);
-} */
+@font-face {
+  font-family: mainFont;
+  src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&display=swap');
+}
