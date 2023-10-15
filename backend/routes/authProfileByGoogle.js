@@ -35,8 +35,8 @@ router.post("/loginByGoogle", [body("email").isEmail()], async (req, res) => {
         id: foundUser.id,
       },
     };
-    const authToken = jwt.sign(data, jwtSecret);
-    res.json({ success: true, authToken: authToken });
+    const googleAuthToken = jwt.sign(data, jwtSecret);
+    res.json({ success: true, googleAuthToken: googleAuthToken });
     // res.json({ user });
   } catch (error) {
     console.log("error", error);
