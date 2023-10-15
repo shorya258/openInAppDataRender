@@ -12,6 +12,7 @@ import { Bar } from "react-chartjs-2";
 import Legend1 from "../Components/assets/legend1.svg";
 import Legend2 from "../Components/assets/legend2.svg";
 
+import {isMobile} from "react-device-detect"
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
 function Activities(props) {
@@ -36,7 +37,7 @@ function Activities(props) {
         backgroundColor: " rgba(152, 216, 158, 1)",
         borderColor: "white",
         borderWidth: "1",
-        barThickness: 40,
+        barThickness: isMobile ? 10 : 40,
         borderRadius: 5,
         pointStyle: "circle",
       },
@@ -46,7 +47,7 @@ function Activities(props) {
         backgroundColor: " rgba(238, 132, 132, 1)",
         borderColor: "white",
         borderWidth: "1",
-        barThickness: 40,
+        barThickness: isMobile ? 10 : 40,
         borderRadius: 5,
       },
     ],

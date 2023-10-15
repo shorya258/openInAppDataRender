@@ -131,7 +131,7 @@ function Dashboard() {
         <div className="flex flex-row items-center justify-between mb-3">
           <h1 className="dashboard-heading"> Dashboard</h1>
           <div className="flex flex-row items-center ">
-            <form className="ml-6">
+            <form className="dashboard-top-form ml-6">
               <label
                 htmlFor="default-search"
                 className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
