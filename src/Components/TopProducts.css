@@ -2,3 +2,26 @@
     width: 10px;
     height: 10px;
 }
+.products-subhead-wrapper > p {
+    font-size: 0.75rem;
+    color: #858585;
+}
+.doughnut {
+    max-width: 200px;
+    max-height: 300px;
+    object-fit: cover;
+}
+.product-legend-text {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+.product-legend-text > h3 {
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+.product-legend-text > p {
+    font-size: 0.75rem;
+    font-family: var(--second-font);
+    font-weight: 400;
+    color: #858585 ;
+}

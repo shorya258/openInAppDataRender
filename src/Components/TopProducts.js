@@ -36,28 +36,31 @@ function TopProducts() {
   };
   return (
     <>
-      <h1 className="dashboard-sub-heading">TopProducts</h1>
-      <div className="flex flex-row top-products-wrapper">
-        <Doughnut width='200px' height='200px' data={data} options={options}></Doughnut>
+    <div className="products-subhead-wrapper flex flex-row justify-between">
+    <h1 className="dashboard-sub-heading">TopProducts</h1>
+    <p>May - June 2021</p>
+    </div>
 
+      <div className="flex flex-row items-center justify-between top-products-wrapper">
+        <Doughnut className="doughnut" data={data} options={options}></Doughnut>
         <div className="product-legends flex flex-col w-6/12">
-          <div className="product-legend flex flex-row">
+          <div className="product-legend flex flex-row items-baseline">
             <img src={Legend2} alt="img2" />
-            <div>
+            <div className="product-legend-text">
               <h3>Basic Tees</h3>
               <p>31%</p>
             </div>
           </div>
-          <div>
+          <div className="product-legend flex flex-row items-baseline">
             <img src={Legend3} alt="img3" />
-            <div>
+            <div className="product-legend-text">
               <h3>Custom Short Pants</h3>
               <p>31%</p>
             </div>
           </div>
-          <div>
+          <div className="product-legend flex flex-row items-baseline">
             <img src={Legend1} alt="img1" />
-            <div>
+            <div className="product-legend-text">
               <h3>Super Hoodies</h3>
               <p>31%</p>
             </div>
