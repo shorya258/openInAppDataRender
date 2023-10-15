@@ -8,8 +8,8 @@ const MODAL_STYLES = {
   backgroundColor: "rgb(248,250,255)",
   transform: "translate(-50%, -50%)",
   zIndex: 1000,
-  height: "90%",
-  width: "90%",
+  width : '500px',
+  borderRadius : '16px',
 };
 const OVERLAY_STYLES = {
   position: "fixed",
@@ -25,13 +25,6 @@ function ModalForm(props) {
     <>
       <div style={OVERLAY_STYLES} />
       <div style={MODAL_STYLES}>
-        <button
-          className="btn btn-danger fs-4"
-          style={{ marginLeft: "90%", marginTop: "-35px" }}
-          onClick={props.onClose}
-        >
-          X
-        </button>
         <AddProfileForm onClose={props.onClose} />
       </div>
     </>,

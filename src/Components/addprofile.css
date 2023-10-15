@@ -7,3 +7,22 @@
 .add-profile-icon-div > button > img {
     width: 80px;
 }
+.modal-form-header {
+    /* margin-bottom: 1rem; */
+}
+.modal-switch-btn {
+    width: 43%;
+    text-align: center;
+    border-bottom: 4px solid #D9D9D9;
+    padding-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.active-btn  {
+    border-bottom: 4px solid #3F84F8 !important;
+}
+
+.modal-form-label {
+    font-size: 1rem;
+    font-weight: 400;
+}

@@ -44,12 +44,24 @@ function AddProfileForm(props) {
     });
   };
   return (
-    <div className="m-2 p-2">
-      <h2 className="font-bold">Add New Profile</h2>
+    <div className="py-5 px-7">
+      <div className="modal-form-header mt-1 mb-3 flex flex-row justify-between">
+        <h2 className="font-bold">Add New Profile</h2>
+        <button
+          className="modal-close-btn btn btn-danger fs-4"
+          onClick={props.onClose}
+        >
+          X
+        </button>
+      </div>
       <hr />
-      <div className="flex justify-around ">
+      <div className="flex justify-between mt-4 ">
         <div
-          className="basic-heading mr-1"
+          className={
+            toggleBasicToSocial
+              ? "modal-switch-btn active-btn"
+              : "modal-switch-btn"
+          }
           style={{ cursor: "pointer" }}
           onClick={() => {
             setToggleBasicToSocial(true);
@@ -58,7 +70,11 @@ function AddProfileForm(props) {
           Basic
         </div>
         <div
-          className="Contact-heading ml-1"
+          className={
+            toggleBasicToSocial
+              ? "modal-switch-btn"
+              : "modal-switch-btn active-btn"
+          }
           style={{ cursor: "pointer" }}
           onClick={() => {
             setToggleBasicToSocial(false);
@@ -67,18 +83,15 @@ function AddProfileForm(props) {
           Contact
         </div>
       </div>
-      <section>
+      <section className="mb-6">
         {toggleBasicToSocial ? (
           <div className="basic">
             <form>
-              <div className="m-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 place-content-center">
+              <div className="my-5 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 place-content-center">
                 {/* FULL NAME */}
-                <div className="sm:col-span-4">
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    Enter Name
+                <div className="sm:col-span-6">
+                  <label htmlFor="name" className="modal-form-label">
+                    Enter Name*
                   </label>
                   <div className="mt-2">
                     <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-black-600 sm:max-w-md">
@@ -88,7 +101,7 @@ function AddProfileForm(props) {
                         required
                         onChange={onChange}
                         value={newProfileCredentials.name || ""}
-                        className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                        className="block flex-1 border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                         placeholder="Eg John Doe"
                       />
                     </div>
@@ -96,12 +109,9 @@ function AddProfileForm(props) {
                 </div>
 
                 {/* EMAIL */}
-                <div className="sm:col-span-4">
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    Enter Email
+                <div className="sm:col-span-6">
+                  <label htmlFor="email" className="modal-form-label">
+                    Enter Email*
                   </label>
                   <div className="mt-2">
                     <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-black-600 sm:max-w-md">
@@ -111,19 +121,16 @@ function AddProfileForm(props) {
                         required
                         onChange={onChange}
                         value={newProfileCredentials.email || ""}
-                        className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                        className="block flex-1 border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                         placeholder="Eg John@xyz.com"
                       />
                     </div>
                   </div>
                 </div>
                 {/* Phone Number */}
-                <div className="sm:col-span-4">
-                  <label
-                    htmlFor="ph_number"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    Enter Phone
+                <div className="sm:col-span-6">
+                  <label htmlFor="ph_number" className="modal-form-label">
+                    Enter Phone*
                   </label>
                   <div className="mt-2">
                     <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-black-600 sm:max-w-md">
@@ -133,7 +140,7 @@ function AddProfileForm(props) {
                         required
                         onChange={onChange}
                         value={newProfileCredentials.ph_number || ""}
-                        className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                        className="block flex-1 border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                         placeholder="Eg. 987654321"
                       />
                     </div>
@@ -162,7 +169,7 @@ function AddProfileForm(props) {
                       required
                       onChange={onChange}
                       value={newProfileCredentials.ig_link || ""}
-                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      className="block flex-1 border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                       placeholder="Eg.instagram.com/username"
                     />
                   </div>
@@ -186,7 +193,7 @@ function AddProfileForm(props) {
                       required
                       onChange={onChange}
                       value={newProfileCredentials.yt_link || ""}
-                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      className="block flex-1 border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                       placeholder="youtube/username"
                     />
                   </div>
@@ -197,18 +204,31 @@ function AddProfileForm(props) {
         )}
       </section>
       <hr />
-      <button
-        className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black mt-2 mr-3"
-        onClick={props.onClose}
-      >
-        Back
-      </button>
-      <button
-        className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black mt-2"
-        onClick={handleSubmit}
-      >
-        Done
-      </button>
+      <div className="flex justify-end mt-4">
+      {toggleBasicToSocial ? (
+        <button
+          className="rounded-md bg-[#3E84F8] px-3 ml-auto py-2 text-sm font-semibold text-white shadow-sm hover:bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black mt-2 mr-3"
+          onClick={() => setToggleBasicToSocial(false)}
+        >
+          Next
+        </button>
+      ) : (
+        <>
+          <button
+            className="border border-[#999CA0] rounded-lg bg-white px-3 py-2 text-sm font-semibold text-black shadow-sm hover:bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black mt-2 mr-3"
+            onClick={() => setToggleBasicToSocial(true)}
+          >
+            Back
+          </button>
+          <button
+            className="rounded-lg bg-[#3E84F8] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black mt-2 border-radius"
+            onClick={handleSubmit}
+          >
+            Done
+          </button>
+        </>
+      )}
+      </div>
     </div>
   );
 }

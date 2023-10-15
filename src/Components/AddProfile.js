@@ -43,6 +43,7 @@ function AddProfile() {
 
   return (
     <>
+      {showProfileForm && <ModalForm onClose={onClose}></ModalForm>}
       {showProfileInfo == null && (
         <div className="add-profile-icon-div mx-auto my-auto w-auto flex flex-col justify-center items-center">
           <button
@@ -53,7 +54,6 @@ function AddProfile() {
             <img src={AddProfileIcon} alt="add profile" />
           </button>
           <p className="mt-3">Add profile</p>
-          {showProfileForm && <ModalForm onClose={onClose}></ModalForm>}
         </div>
       )}
       {showProfileInfo && (
