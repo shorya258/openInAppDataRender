@@ -31,7 +31,7 @@ function GLogin() {
       alert("enter valid credentials");
     }
     if (json.success) {
-      localStorage.setItem("googleAuthToken", json.googleAuthToken);
+      localStorage.setItem("authToken", json.authToken);
       navigate("/dashboard");
     }
   };

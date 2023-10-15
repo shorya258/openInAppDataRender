@@ -85,9 +85,9 @@ function Dashboard() {
     }
   };
   const handleLogout = () => {
-    if (localStorage.getItem("googleAuthToken") !== null) {
-      setIsGoogleLogin(true);
-    }
+    // if (localStorage.getItem("googleAuthToken") !== null) {
+    //   setIsGoogleLogin(true);
+    // }
     // localStorage.removeItem("authToken");
     localStorage.clear();
     sessionStorage.clear();
