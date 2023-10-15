@@ -57,46 +57,39 @@ function AddProfile() {
         </div>
       )}
       {showProfileInfo && (
-        <>
-          <h1 className="font-bold mb-4 "> {showProfileInfo.name}</h1>
-          <div className="profile-info flex flex-row ">
+        <div className="flex flex-col justify-evenly h-full py-6 px-8 show-profile-info">
+          <h1 className="font-bold mt-2"> {showProfileInfo.name}</h1>
+          <div className="profile-info grid grid-cols-2 grid-rows-2 gap-6 my-6">
             {showProfileInfo.ph_number && (
-              <div className="flex flex-row-2">
-                <span>
-                  <img src={whatsapp_icon} alt="whatsapp_icon" />
-                </span>
-                {showProfileInfo.ph_number}
+              <div className="flex flex-row items-center">
+                <img src={whatsapp_icon} alt="whatsapp_icon" />
+                <p>{showProfileInfo.ph_number}</p>
+              </div>
+            )}
+            {showProfileInfo.ig_link && (
+              <div className="flex flex-row items-center">
+                  <img src={ig_icon} alt="ig_icon" />
+                <p>{showProfileInfo.ig_link}</p>
               </div>
             )}
 
             {showProfileInfo.email && (
-              <div className="flex flex-row">
-                <span>
+              <div className="flex flex-row items-center">
                   <img src={mail_icon} alt="mail_icon" />
-                </span>
-                {showProfileInfo.email}
+                <p>{showProfileInfo.email}</p>
               </div>
             )}
 
             {showProfileInfo.yt_link && (
-              <div className="flex flex-row">
-                <span>
+              <div className="flex flex-row items-center">
                   <img src={yt_icon} alt="yt_icon" />
-                </span>
-                {showProfileInfo.yt_link}
+                <p>{showProfileInfo.yt_link}</p>
               </div>
             )}
 
-            {showProfileInfo.ig_link && (
-              <div className="flex flex-row">
-                <span>
-                  <img src={ig_icon} alt="ig_icon" />
-                </span>
-                {showProfileInfo.ig_link}
-              </div>
-            )}
+
           </div>
-        </>
+        </div>
       )}
     </>
   );
