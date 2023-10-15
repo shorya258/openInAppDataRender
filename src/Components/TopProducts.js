@@ -27,7 +27,7 @@ function TopProducts() {
   };
   const options = {
     aspectRatio: 3,
-    cutout: 40,
+    cutout: 60,
     plugins: {
       legend: {
         display: false,

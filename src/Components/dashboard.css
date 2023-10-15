@@ -1,5 +1,9 @@
+.border-and-shadow-box {
+    border: 2px solid #E0E0E0;
+    box-shadow: 4px 4px 20px 0px #0000001A;
+}
 .bar-chart-wrapper {
-    height: 250px !important;
+    height: 200px !important;
     width: 100% !important;
 }
 .stock-image {
@@ -16,15 +20,7 @@
     font-size: 1.125rem;
     font-weight: 700;
 }
-.activities-legend {
 
-    /* background-color: red; */
-}
-.activities-heading-wrapper {
-}
-.legend {
-    /* background-color: aqua; */
-}
 .legend > img {
     width: 10px;
     height: 10px;

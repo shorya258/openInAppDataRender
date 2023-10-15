@@ -86,7 +86,7 @@ function Dashboard() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col justify-between w-10/12 dashboard-wrapper border-solid ">
+      <div className="flex flex-col justify-between w-10/12 py-4 dashboard-wrapper border-solid ">
         <div className="flex flex-row items-center justify-between">
           <h1 className="dashboard-heading"> Dashboard</h1>
           <div className="flex flex-row items-center ">
@@ -180,7 +180,6 @@ function Dashboard() {
         {/* yellow rgba(222, 191, 133, 1) */}
         {/* red rgba(236, 164, 164, 1) */}
         {/* purple rgba(169, 176, 229, 1) */}
-        <div className="activites">
           <Activities
             city1name={SampleOutput[0].name}
             city2name={SampleOutput[1].name}
@@ -189,12 +188,11 @@ function Dashboard() {
             city2data={SampleOutput[1].main}
             city3data={SampleOutput[2].main}
           />
-        </div>
         <div className="flex flex-row justify-between">
-          <div className="top-products w-6/12 mr-4 h-100 px-10 py-6 bg-white rounded-xl shadow-xl p-3 ">
+          <div className="top-products w-6/12 mr-4 h-100 px-10 py-6 bg-white border-and-shadow-box rounded-xl shadow-xl p-3 ">
             <TopProducts />
           </div>
-          <div className="add-profile-wrapper w-6/12 ml-4 h-100 bg-white rounded-xl shadow-xl ">
+          <div className="add-profile-wrapper w-6/12 ml-4 h-100 bg-white border-and-shadow-box rounded-xl shadow-xl ">
             <AddProfile />
           </div>
         </div>
