@@ -64,34 +64,38 @@ function Dashboard() {
   return (
     <div className="flex justify-between flex-row w-screen h-screen border-solid background-style p-10">
       <div
-        className="w-2/12 menu rounded-xl h-100 text-white border-solid mr-10"
+        className="w-2/12 menu rounded-xl h-100 text-white border-solid mr-12"
         style={{ backgroundColor: "rgb(62, 132, 248)" }}
       >
-        <div className="menu-items-wrapper my-10 px-8">
-          <h1 className="text-4xl font-bold">Board.</h1>
-          <div className="flex flex-col gap-8 my-10">
-            <div className="flex gap-4">
-              <img src={dashboardIcon} alt="dashboardIcon" />
-              <h2 className="font-bold">Dashboard</h2>
-            </div>
-            <div className="flex gap-4">
-              <img src={transactionsIcon} alt="transactionsIcon" />
-              <h2>Transactions</h2>
-            </div>
-            <div className="flex gap-4">
-              <img src={schedulesIcon} alt="schedulesIcon" />
-              <h2>Schedules</h2>
-            </div>
-            <div className="flex gap-4">
-              <img src={userIcon} alt="userIcon" />
-              <h2>Users</h2>
-            </div>
-            <div className="flex gap-4">
-              <img src={settingIcon} alt="settingIcon" />
-              <h2>Settings</h2>
+        <div className="flex flex-col justify-between menu-items-wrapper py-10 px-8 h-full">
+          <div>
+            <h1 className="text-4xl font-bold">Board.</h1>
+            <div className="flex flex-col gap-8 my-10">
+              <div className="dashboard-menu-links flex gap-4">
+                <img src={dashboardIcon} alt="dashboardIcon" />
+                <h2 className="font-bold">Dashboard</h2>
+              </div>
+              <div className="dashboard-menu-links flex gap-4">
+                <img src={transactionsIcon} alt="transactionsIcon" />
+                <h2>Transactions</h2>
+              </div>
+              <div className="dashboard-menu-links flex gap-4">
+                <img src={schedulesIcon} alt="schedulesIcon" />
+                <h2>Schedules</h2>
+              </div>
+              <div className="dashboard-menu-links flex gap-4">
+                <img src={userIcon} alt="userIcon" />
+                <h2>Users</h2>
+              </div>
+              <div className="dashboard-menu-links flex gap-4">
+                <img src={settingIcon} alt="settingIcon" />
+                <h2>Settings</h2>
+              </div>
             </div>
           </div>
-          <div style={{ top: 30 }}>
+          <div className="menu-bottom-links flex flex-col items-start gap-2">
+            <button>Help</button>
+            <button>Contact Us</button>
             <button onClick={handleLogout}>
               {isGoogleLogin && <div>dude!</div>}
               Log out
@@ -100,7 +104,7 @@ function Dashboard() {
         </div>
       </div>
       <div className="flex flex-col justify-between w-10/12 py-4 dashboard-wrapper border-solid ">
-        <div className="flex flex-row items-center justify-between">
+        <div className="flex flex-row items-center justify-between mb-3">
           <h1 className="dashboard-heading"> Dashboard</h1>
           <div className="flex flex-row items-center ">
             <form className="ml-6">
@@ -193,14 +197,14 @@ function Dashboard() {
         {/* yellow rgba(222, 191, 133, 1) */}
         {/* red rgba(236, 164, 164, 1) */}
         {/* purple rgba(169, 176, 229, 1) */}
-          <Activities
-            city1name={SampleOutput[0].name}
-            city2name={SampleOutput[1].name}
-            city3name={SampleOutput[2].name}
-            city1data={SampleOutput[0].main}
-            city2data={SampleOutput[1].main}
-            city3data={SampleOutput[2].main}
-          />
+        <Activities
+          city1name={SampleOutput[0].name}
+          city2name={SampleOutput[1].name}
+          city3name={SampleOutput[2].name}
+          city1data={SampleOutput[0].main}
+          city2data={SampleOutput[1].main}
+          city3data={SampleOutput[2].main}
+        />
         <div className="flex flex-row justify-between">
           <div className="top-products w-6/12 mr-4 h-100 px-10 py-6 bg-white border-and-shadow-box rounded-xl shadow-xl p-3 ">
             <TopProducts />
