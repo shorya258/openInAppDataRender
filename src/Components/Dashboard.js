@@ -6,6 +6,7 @@ import TopProducts from "./TopProducts";
 import AddProfile from "./AddProfile";
 import SampleOutput from "./weather.json";
 import stockPhoto from "../Components/assets/stockPhoto.jpg";
+import BellIcon from "../Components/assets/bell_icon.svg";
 // import { useEffect } from "react";
 // require("dotenv").config();
 function Dashboard() {
@@ -41,17 +42,17 @@ function Dashboard() {
       </div>
       <div className="w-10/12 dashboard-wrapper border-solid border-2 border-sky-500 ">
         <div className="flex flex-row items-center justify-between">
-          <h1> Dashboard</h1>
+          <h1 className="dashboard-heading"> Dashboard</h1>
           <div className="flex flex-row items-center ">
-            <form>
+            <form className="ml-6">
               <label
                 for="default-search"
-                class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white" 
+                class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
               >
                 Search
               </label>
               <div class="relative">
-                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <div class="absolute inset-y-0 right-5 flex items-center pl-3 pointer-events-none">
                   <svg
                     class="w-4 h-4 text-gray-500 dark:text-gray-400"
                     aria-hidden="true"
@@ -71,20 +72,27 @@ function Dashboard() {
                 <input
                   type="search"
                   id="default-search"
-                  class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Search Mockups, Logos..."
+                  class="block w-full h-4/6 p-2 pl-10 text-sm text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Search"
                   required
                 />
-                <button
-                  type="submit"
-                  class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                >
-                  Search
-                </button>
               </div>
             </form>
+            <svg
+              width="19"
+              height="22"
+              viewBox="0 0 19 22"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="ml-6"
+            >
+              <path
+                d="M16.3861 12.6564V8.91122C16.3861 5.55139 14.2011 2.72107 11.2411 1.86988C10.9481 1.09912 10.2321 0.55603 9.38611 0.55603C8.54011 0.55603 7.82411 1.09912 7.53111 1.86988C4.57111 2.72211 2.38611 5.55139 2.38611 8.91122V12.6564L0.679109 14.4392C0.586067 14.536 0.512279 14.6511 0.461994 14.7778C0.411709 14.9046 0.385919 15.0404 0.386109 15.1776V17.2664C0.386109 17.5434 0.491466 17.809 0.679003 18.0049C0.866539 18.2008 1.12089 18.3108 1.38611 18.3108H17.3861C17.6513 18.3108 17.9057 18.2008 18.0932 18.0049C18.2808 17.809 18.3861 17.5434 18.3861 17.2664V15.1776C18.3863 15.0404 18.3605 14.9046 18.3102 14.7778C18.2599 14.6511 18.1862 14.536 18.0931 14.4392L16.3861 12.6564ZM16.3861 16.222H2.38611V15.61L4.09311 13.8272C4.18615 13.7304 4.25994 13.6153 4.31023 13.4886C4.36051 13.3618 4.3863 13.226 4.38611 13.0888V8.91122C4.38611 6.03181 6.62911 3.68923 9.38611 3.68923C12.1431 3.68923 14.3861 6.03181 14.3861 8.91122V13.0888C14.3861 13.3666 14.4911 13.6319 14.6791 13.8272L16.3861 15.61V16.222ZM9.38611 21.444C10.0054 21.4448 10.6096 21.2441 11.1146 20.8697C11.6196 20.4954 12.0004 19.966 12.2041 19.3552H6.56811C6.77177 19.966 7.15259 20.4954 7.65762 20.8697C8.16265 21.2441 8.76681 21.4448 9.38611 21.444Z"
+                fill="black"
+              />
+            </svg>
 
-            <img className="stock-image" src={stockPhoto} alt="stock"></img>
+            <img className="stock-image ml-6" src={stockPhoto} alt="stock"></img>
           </div>
         </div>
         <div className=" flex flex-row item-cards-wrapper">
