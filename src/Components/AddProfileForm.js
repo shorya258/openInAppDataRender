@@ -207,7 +207,7 @@ function AddProfileForm(props) {
       <div className="flex justify-end mt-4">
       {toggleBasicToSocial ? (
         <button
-          className="rounded-md bg-[#3E84F8] px-3 ml-auto py-2 text-sm font-semibold text-white shadow-sm hover:bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black mt-2 mr-3"
+          className="rounded-md bg-[#3E84F8] px-3 ml-auto py-2 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black mt-2 mr-3"
           onClick={() => setToggleBasicToSocial(false)}
         >
           Next
@@ -215,7 +215,7 @@ function AddProfileForm(props) {
       ) : (
         <>
           <button
-            className="border border-[#999CA0] rounded-lg bg-white px-3 py-2 text-sm font-semibold text-black shadow-sm hover:bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black mt-2 mr-3"
+            className="border border-[#999CA0] rounded-lg bg-white px-3 py-2 text-sm font-semibold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black mt-2 mr-3"
             onClick={() => setToggleBasicToSocial(true)}
           >
             Back
