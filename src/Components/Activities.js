@@ -67,19 +67,19 @@ function Activities(props) {
     maintainAspectRatio: false,
   };
   return (
-    <div className="rounded-xl shadow-xl p-6 border-sky-500 border-solid border-2">
-      <div className="flex flex-row justify-between activities-heading-wrapper mb-6">
+    <div className="rounded-xl shadow-xl px-10 py-6 border-sky-500 border-solid border-2">
+      <div className="flex flex-row justify-between items-end activities-heading-wrapper mb-6">
         <div className="activities-subhead-wrapper">
           <h1 className="dashboard-sub-heading">Activities</h1>
           <p>May - June 2021</p>
         </div>
         <div className="flex flex-row activities-legend">
-          <div className="flex flex-row legend ml-2">
+          <div className="flex flex-row items-center legend ml-2">
             <img src={Legend1} alt="img1"/>
             <p>Min Temp.</p>
           </div>
 
-          <div className="flex flex-row legend ml-2">
+          <div className="flex flex-row items-center legend ml-2">
             <img src={Legend2} alt="img2"/>
             <p>Max Temp.</p>
           </div>

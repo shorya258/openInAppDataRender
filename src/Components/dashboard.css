@@ -16,8 +16,20 @@
     font-size: 1.125rem;
     font-weight: 700;
 }
+.activities-legend {
 
+    /* background-color: red; */
+}
+.activities-heading-wrapper {
+}
+.legend {
+    /* background-color: aqua; */
+}
 .legend > img {
-    width: 20px;
-    background-color: aqua;
+    width: 10px;
+    height: 10px;
+    margin: 1rem;
+}
+.legend p  {
+    font-size: 1rem;
 }
