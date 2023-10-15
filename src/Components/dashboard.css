@@ -2,3 +2,8 @@
     height: 300px !important;
     /* width: 80% !important; */
 }
+.stock-image {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
