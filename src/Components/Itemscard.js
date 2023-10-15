@@ -1,21 +1,21 @@
 import React from "react";
-
+import "./itemscard.css";
 function Itemscard(props) {
   return (
-    <div className="item-card bg-white rounded-xl shadow-xl m-3 p-5 ">
-      <div
-        className="p-1 rounded-full content-center"
-        style={{
-          backgroundColor: `${props.iconColor}`,
-          width: "1.6rem",
-          height: "auto",
-        }}
-      >
-        <img src={props.iconImg} alt={props.iconAltTxt} />
+    <div className="flex flex-col item-card bg-white rounded-xl shadow-xl px-5 py-3 flex-1">
+      <div className="item-card-img-div">
+        <img
+          src={props.iconImg}
+          alt={props.iconAltTxt}
+          className="item-card-img"
+          style={{ backgroundColor: props.iconColor }}
+        />
       </div>
-      {props.content}
-      <hr />
-      {props.caption}
+      <p className="item-card-caption">{props.caption}</p>
+      <div className="flex flex-row justify-between items-center">
+        <p className="item-card-stat">{props.content}</p>
+        <p className="item-card-growth">+2.5%</p>
+      </div>
     </div>
   );
 }

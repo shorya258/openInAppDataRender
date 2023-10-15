@@ -67,7 +67,7 @@ function Activities(props) {
     maintainAspectRatio: false,
   };
   return (
-    <div className="rounded-xl shadow-xl px-10 py-6 border-sky-500 border-solid border-2">
+    <div className="rounded-xl shadow-xl px-10 py-6">
       <div className="flex flex-row justify-between items-end activities-heading-wrapper mb-6">
         <div className="activities-subhead-wrapper">
           <h1 className="dashboard-sub-heading">Activities</h1>
