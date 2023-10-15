@@ -21,9 +21,6 @@ function TopProducts() {
         borderColor: "white",
       },
     ],
-    // background: rgba(152, 216, 158, 1);  GREEN
-    // background: rgba(238, 132, 132, 1); RED
-    // rgb(246,220,125) YELLOW
   };
   const options = {
     aspectRatio: 3,

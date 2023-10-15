@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
 
-import { GoogleLogout } from "react-google-login";
+// import { GoogleLogout } from "react-google-login";
 
 import "./dashboard.css";
 import Itemscard from "./Itemscard";
 import Activities from "./Activities";
 import TopProducts from "./TopProducts";
 import AddProfile from "./AddProfile";
-import SampleOutput from "./weather.json";
 import stockPhoto from "../Components/assets/stockPhoto.jpg";
-import BellIcon from "../Components/assets/bell_icon.svg";
 import dashboardIcon from "../Components/assets/dashboard_icon.svg";
 import transactionsIcon from "../Components/assets/transaction_icon.svg";
 import schedulesIcon from "../Components/assets/schedule_icon.svg";
@@ -20,19 +18,16 @@ import vector2 from "../Components/assets/vector2.svg";
 import vector3 from "../Components/assets/vector3.svg";
 import vector4 from "../Components/assets/vector4.svg";
 import { useNavigate } from "react-router-dom";
-// import { useEffect } from "react";
 // require("dotenv").config();
 function Dashboard() {
   let navigate = useNavigate();
-  const clientId =
-    "980512281451-t9ppbk7qgsg0qmejr2c06vl0f7p53bpg.apps.googleusercontent.com";
+
   const [isGoogleLogin, setIsGoogleLogin] = useState(false);
   const [avgTemp, setAvgTemp] = useState(0);
   const [avgFeelsTemp, setFeelsTemp] = useState(0);
   let API_KEY = "d28b937e8b237af8a5e4e15379047501";
   // let API_KEY = process.env.REACT_APP_APIKEY;
   // console.log(`${process.env.REACT_APP_APIKEY}`);
-  // CHARKHI DADRI
 
   const [cityData, setCityData] = useState([]);
 
@@ -85,10 +80,6 @@ function Dashboard() {
     }
   };
   const handleLogout = () => {
-    // if (localStorage.getItem("googleAuthToken") !== null) {
-    //   setIsGoogleLogin(true);
-    // }
-    // localStorage.removeItem("authToken");
     localStorage.clear();
     sessionStorage.clear();
     console.log("local storage cleared out");
@@ -142,15 +133,15 @@ function Dashboard() {
           <div className="flex flex-row items-center ">
             <form className="ml-6">
               <label
-                for="default-search"
-                class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+                htmlFor="default-search"
+                className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
               >
                 Search
               </label>
-              <div class="relative">
-                <div class="absolute inset-y-0 right-5 flex items-center pl-3 pointer-events-none">
+              <div className="relative">
+                <div className="absolute inset-y-0 right-5 flex items-center pl-3 pointer-events-none">
                   <svg
-                    class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                    className="w-4 h-4 text-gray-500 dark:text-gray-400"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -168,7 +159,7 @@ function Dashboard() {
                 <input
                   type="search"
                   id="default-search"
-                  class="block w-full h-4/6 p-2 pl-10 text-sm text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="block w-full h-4/6 p-2 pl-10 text-sm text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Search"
                   required
                 />
@@ -216,7 +207,6 @@ function Dashboard() {
                 iconColor={"rgba(236, 164, 164, 1)"}
                 iconImg={vector3}
                 iconAltTxt="Average Temperature"
-                // content={"88"}
                 content={avgTemp}
                 caption={"Average Temperature (in ℃)"}
               />
@@ -224,7 +214,6 @@ function Dashboard() {
                 iconColor={"rgba(169, 176, 229, 1)"}
                 iconImg={vector4}
                 iconAltTxt="Feels Like"
-                // content={"88"}
                 content={avgFeelsTemp}
                 caption={"Feels Like (in ℃)"}
               />
@@ -236,21 +225,7 @@ function Dashboard() {
         {/* yellow rgba(222, 191, 133, 1) */}
         {/* red rgba(236, 164, 164, 1) */}
         {/* purple rgba(169, 176, 229, 1) */}
-        <Activities
-          // city1name={SampleOutput[0].name}
-          // city2name={SampleOutput[1].name}
-          // city3name={SampleOutput[2].name}
-          // city1data={SampleOutput[0].main}
-          // city2data={SampleOutput[1].main}
-          // city3data={SampleOutput[2].main}
-
-          // city1name={cityData[0].name}
-          // city2name={cityData[1].name}
-          // city3name={cityData[2].name}
-          cityData={cityData}
-          // city2data={cityData}
-          // city3data={cityData}
-        />
+        <Activities cityData={cityData} />
         <div className="flex flex-row justify-between">
           <div className="top-products w-6/12 mr-4 h-100 px-10 py-6 bg-white border-and-shadow-box rounded-xl shadow-xl p-3 ">
             <TopProducts />

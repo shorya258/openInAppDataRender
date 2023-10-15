@@ -1,5 +1,4 @@
 import React from "react";
-import { gapi } from "gapi-script";
 import { useNavigate } from "react-router-dom";
 import GoogleLogin from "react-google-login";
 function GLogin() {

@@ -9,8 +9,6 @@ router.post("/findProfileByEmail", async (req, res) => {
     } else {
       res.json({ body: foundProfile });
     }
-
-    // console.log(emailId);
   } catch (error) {
     console.log(error.message);
     res.send("Server Error", error.message);

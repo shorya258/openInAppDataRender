@@ -24,17 +24,6 @@ function AddProfileForm(props) {
       body: JSON.stringify(reqData),
     });
     console.log("order response::::", response);
-
-    // SEND THIS PROFILE OBJ TO BACKEND
-    // let res = await fetch("http://localhost:5000/api/findProfileByEmail", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({ email: reqData.email }),
-    // });
-
-    // console.log("res:::", res);
     props.onClose();
   };
   const onChange = (e) => {
@@ -205,29 +194,29 @@ function AddProfileForm(props) {
       </section>
       <hr />
       <div className="flex justify-end mt-4">
-      {toggleBasicToSocial ? (
-        <button
-          className="rounded-md bg-[#3E84F8] px-3 ml-auto py-2 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black mt-2 mr-3"
-          onClick={() => setToggleBasicToSocial(false)}
-        >
-          Next
-        </button>
-      ) : (
-        <>
+        {toggleBasicToSocial ? (
           <button
-            className="border border-[#999CA0] rounded-lg bg-white px-3 py-2 text-sm font-semibold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black mt-2 mr-3"
-            onClick={() => setToggleBasicToSocial(true)}
+            className="rounded-md bg-[#3E84F8] px-3 ml-auto py-2 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black mt-2 mr-3"
+            onClick={() => setToggleBasicToSocial(false)}
           >
-            Back
+            Next
           </button>
-          <button
-            className="rounded-lg bg-[#3E84F8] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black mt-2 border-radius"
-            onClick={handleSubmit}
-          >
-            Done
-          </button>
-        </>
-      )}
+        ) : (
+          <>
+            <button
+              className="border border-[#999CA0] rounded-lg bg-white px-3 py-2 text-sm font-semibold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black mt-2 mr-3"
+              onClick={() => setToggleBasicToSocial(true)}
+            >
+              Back
+            </button>
+            <button
+              className="rounded-lg bg-[#3E84F8] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black mt-2 border-radius"
+              onClick={handleSubmit}
+            >
+              Done
+            </button>
+          </>
+        )}
       </div>
     </div>
   );

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./addprofile.css";
-import addProfile from "./assets/addProfile.png";
 import ModalForm from "./ModalForm";
 import whatsapp_icon from "./assets/whatsapp_icon.png";
 import mail_icon from "./assets/mail_icon.png";
@@ -68,26 +67,24 @@ function AddProfile() {
             )}
             {showProfileInfo.ig_link && (
               <div className="flex flex-row items-center">
-                  <img src={ig_icon} alt="ig_icon" />
+                <img src={ig_icon} alt="ig_icon" />
                 <p>{showProfileInfo.ig_link}</p>
               </div>
             )}
 
             {showProfileInfo.email && (
               <div className="flex flex-row items-center">
-                  <img src={mail_icon} alt="mail_icon" />
+                <img src={mail_icon} alt="mail_icon" />
                 <p>{showProfileInfo.email}</p>
               </div>
             )}
 
             {showProfileInfo.yt_link && (
               <div className="flex flex-row items-center">
-                  <img src={yt_icon} alt="yt_icon" />
+                <img src={yt_icon} alt="yt_icon" />
                 <p>{showProfileInfo.yt_link}</p>
               </div>
             )}
-
-
           </div>
         </div>
       )}

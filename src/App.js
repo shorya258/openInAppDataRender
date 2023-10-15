@@ -26,11 +26,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* <Route exact path="/login" element={<Login />} /> */}
         <Route exact path="/" element={<Background />} />
         <Route exact path="/dashboard" element={<Dashboard />} />
-
-        {/* <Route exact path="/signup" element={<Signup />} /> */}
       </Routes>
     </Router>
   );

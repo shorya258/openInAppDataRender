@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "./login.css";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import GLogin from "./GLogin";
-import GLogout from "./GLogout";
 import { useNavigate } from "react-router-dom";
 function Login(props) {
   let navigate = useNavigate();
@@ -50,8 +49,6 @@ function Login(props) {
           <GLogin />
         </div>
 
-        {/* <GLogout /> */}
-
         <div>
           <div className="sign-in-form-wrapper flex flex-col content-wrapper p-7">
             <form>
@@ -95,7 +92,7 @@ function Login(props) {
                 </div>
               </div>
               <div className="forgot-password">
-                <a href="#">Forgot Password?</a>
+                <Link to="/">Forgot Password?</Link>
               </div>
 
               <button
