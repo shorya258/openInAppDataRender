@@ -180,11 +180,11 @@ function Dashboard() {
             city3data={SampleOutput[2].main}
           />
         </div>
-        <div className="flex flex-row ">
-          <div className="top-products bg-white rounded-xl shadow-xl m-3 p-5">
+        <div className="flex flex-row justify-between">
+          <div className="top-products w-5/12 h-auto px-10 py-6 bg-white rounded-xl shadow-xl p-3 ">
             <TopProducts />
           </div>
-          <div className="add-profile bg-white rounded-xl shadow-xl m-3 p-5">
+          <div className="add-profile w-5/12 h-auto bg-white rounded-xl shadow-xl ">
             <AddProfile />
           </div>
         </div>

@@ -1,6 +1,10 @@
 import React from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
+import Legend1 from "../Components/assets/legend1.svg";
+import Legend2 from "../Components/assets/legend2.svg";
+import Legend3 from "../Components/assets/legend3.svg";
+import "./TopProducts.css";
 ChartJS.register(ArcElement, Tooltip, Legend);
 function TopProducts() {
   const data = {
@@ -22,14 +26,43 @@ function TopProducts() {
     // rgb(246,220,125) YELLOW
   };
   const options = {
-    aspectRatio: 2,
-    cutout: 40
+    aspectRatio: 3,
+    cutout: 40,
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
   };
   return (
     <>
-      <div>TopProducts</div>
-      <div>
-        <Doughnut data={data} options={options}></Doughnut>
+      <h1 className="dashboard-sub-heading">TopProducts</h1>
+      <div className="flex flex-row top-products-wrapper">
+        <Doughnut width='200px' height='200px' data={data} options={options}></Doughnut>
+
+        <div className="product-legends flex flex-col w-6/12">
+          <div className="product-legend flex flex-row">
+            <img src={Legend2} alt="img2" />
+            <div>
+              <h3>Basic Tees</h3>
+              <p>31%</p>
+            </div>
+          </div>
+          <div>
+            <img src={Legend3} alt="img3" />
+            <div>
+              <h3>Custom Short Pants</h3>
+              <p>31%</p>
+            </div>
+          </div>
+          <div>
+            <img src={Legend1} alt="img1" />
+            <div>
+              <h3>Super Hoodies</h3>
+              <p>31%</p>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
