@@ -7,6 +7,12 @@ import AddProfile from "./AddProfile";
 import SampleOutput from "./weather.json";
 import stockPhoto from "../Components/assets/stockPhoto.jpg";
 import BellIcon from "../Components/assets/bell_icon.svg";
+import dashboardIcon from "../Components/assets/dashboard_icon.svg";
+import transactionsIcon from "../Components/assets/transaction_icon.svg";
+import schedulesIcon from "../Components/assets/schedule_icon.svg";
+import settingIcon from "../Components/assets/setting_icon.svg";
+import userIcon from "../Components/assets/user_icon.svg";
+
 // import { useEffect } from "react";
 // require("dotenv").config();
 function Dashboard() {
@@ -43,11 +49,26 @@ function Dashboard() {
         <div className="menu-items-wrapper my-10 px-8">
           <h1 className="text-4xl">Board.</h1>
           <div className="flex flex-col gap-5 my-10">
-            <h2>Dashboard</h2>
-            <h2>Transactions</h2>
-            <h2>Schedules</h2>
-            <h2>Users</h2>
-            <h2>Settings</h2>
+            <div>
+              <img src={dashboardIcon} alt="dashboardIcon" />
+              <h2>Dashboard</h2>
+            </div>
+            <div>
+              <img src={transactionsIcon} alt="transactionsIcon" />
+              <h2>Transactions</h2>
+            </div>
+            <div>
+              <img src={schedulesIcon} alt="schedulesIcon" />
+              <h2>Schedules</h2>
+            </div>
+            <div>
+              <img src={userIcon} alt="userIcon" />
+              <h2>Users</h2>
+            </div>
+            <div>
+              <img src={settingIcon} alt="settingIcon" />
+              <h2>Settings</h2>
+            </div>
           </div>
         </div>
       </div>
