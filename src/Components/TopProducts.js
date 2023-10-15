@@ -38,7 +38,9 @@ function TopProducts() {
     <>
       <h1 className="dashboard-sub-heading">TopProducts</h1>
       <div className="flex flex-row top-products-wrapper">
-        <Doughnut width='200px' height='200px' data={data} options={options}></Doughnut>
+        <div className="donut-chart" style={{ width: "40%" }}>
+          <Doughnut data={data} options={options}></Doughnut>
+        </div>
 
         <div className="product-legends flex flex-col w-6/12">
           <div className="product-legend flex flex-row">

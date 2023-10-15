@@ -44,3 +44,33 @@ position: relative;
   width: 50%;
   background-color: #f8faff;
 }
+@media screen and (max-width:650px){
+    .background-style {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .left-panel{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      overflow: hidden;
+      width: 100%;
+      height: 20%;
+      background-size: cover;
+      top:10;
+      background: url(/src/Components/assets/Left\ side.png) 0 0 repeat;
+    }
+    .left-panel::before {
+      position: absolute;
+    }
+    .logo{
+      margin-left: 1.4rem;
+    }
+    .icons-row {
+      margin-top: 2rem;
+      bottom: 0;
+      margin-left: 4rem;
+    }
+}
