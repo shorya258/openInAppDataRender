@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { GoogleLogout } from "react-google-login";
 
@@ -27,30 +27,60 @@ function Dashboard() {
   const clientId =
     "980512281451-t9ppbk7qgsg0qmejr2c06vl0f7p53bpg.apps.googleusercontent.com";
   const [isGoogleLogin, setIsGoogleLogin] = useState(false);
-
-  // let API_KEY = "d28b937e8b237af8a5e4e15379047501";
+  const [avgTemp, setAvgTemp] = useState(0);
+  const [avgFeelsTemp, setFeelsTemp] = useState(0);
+  let API_KEY = "d28b937e8b237af8a5e4e15379047501";
   // let API_KEY = process.env.REACT_APP_APIKEY;
   // console.log(`${process.env.REACT_APP_APIKEY}`);
-  // const url = `https://api.openweathermap.org/data/2.5/weather?lat=23.2&lon=77.4&appid=${API_KEY}`;
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     let data = await fetch(url);
-  //     let parsedData = await data.json();
-  //     console.log("parsed data", parsedData);
-  //   }
-  //   fetchData();
-  // });
-  const avg_temp =
-    (SampleOutput[0].main.temp +
-      SampleOutput[1].main.temp +
-      SampleOutput[2].main.temp) /
-    3;
+  // CHARKHI DADRI
 
-  const temp_feels =
-    (SampleOutput[0].main.feels_like +
-      SampleOutput[1].main.feels_like +
-      SampleOutput[2].main.feels_like) /
-    3;
+  const [cityData, setCityData] = useState([]);
+
+  async function fetchData(lati, longi) {
+    console.log("fetchdata called");
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lati}&lon=${longi}&appid=${API_KEY}`;
+    let data = await fetch(url);
+    let parsedData = await data.json();
+    console.log("parsed data", parsedData);
+    setCityData((cityData) => [...cityData, parsedData]);
+  }
+  // console.log("city data", cityData);
+  useEffect(() => {
+    if (cityData.length === 0) {
+      fetchData(23.2, 77.4);
+      //Bhopal
+      fetchData(28.5, 76.4);
+      //Charkhi Dādri
+      fetchData(22.5, 77.4);
+      // kolkata 22.5726° N, 88.3639° E
+      fetchData(13.0, 80.2);
+      // 13.0827° N, 80.2707° E
+      fetchData(26.8, 80.9);
+      // 26.8467° N, 80.9462° E
+    }
+  }, []);
+  // if (cityData.length !== 0) {
+  //   const avg_temp =
+  //     Math.floor(
+  //       (cityData[0].main.temp +
+  //         cityData[1].main.temp +
+  //         cityData[2].main.temp +
+  //         cityData[3].main.temp +
+  //         cityData[4].main.temp) /
+  //         5
+  //     ) - 273;
+  //   setAvgTemp(avg_temp);
+  //   const temp_feels =
+  //     Math.floor(
+  //       (cityData[0].main.feels_like +
+  //         cityData[1].main.feels_like +
+  //         cityData[2].main.feels_like +
+  //         cityData[3].main.feels_like +
+  //         cityData[4].main.feels_like) /
+  //         5
+  //     ) - 273;
+  //   setFeelsTemp(temp_feels);
+  // }
   const handleLogout = () => {
     if (localStorage.getItem("googleAuthToken") !== null) {
       setIsGoogleLogin(true);
@@ -163,48 +193,61 @@ function Dashboard() {
           </div>
         </div>
         <div className=" flex flex-row justify-between gap-5 item-cards-wrapper">
-          <Itemscard
-            iconColor={"rgba(127, 205, 147, 1)"}
-            iconImg={vector1}
-            iconAltTxt="Average Visbility"
-            content={SampleOutput[0].visibility}
-            caption={"Average Visbility"}
-          />
-          <Itemscard
-            iconColor={"rgba(222, 191, 133, 1)"}
-            iconImg={vector2}
-            iconAltTxt="Total Transactions"
-            content={SampleOutput[0].main.humidity}
-            caption={"Total Transactions"}
-          />
-          <Itemscard
-            iconColor={"rgba(236, 164, 164, 1)"}
-            iconImg={vector3}
-            iconAltTxt="Average Temperature"
-            content={avg_temp}
-            caption={"Average Temperature"}
-          />
-          <Itemscard
-            iconColor={"rgba(169, 176, 229, 1)"}
-            iconImg={vector4}
-            iconAltTxt="Feels Like"
-            content={temp_feels}
-            caption={"Feels Like"}
-          />
+          {cityData.length > 0 && (
+            <>
+              <Itemscard
+                iconColor={"rgba(127, 205, 147, 1)"}
+                iconImg={vector1}
+                iconAltTxt="Average Visbility"
+                content={SampleOutput[0].visibility}
+                caption={"Average Visbility"}
+              />
+              <Itemscard
+                iconColor={"rgba(222, 191, 133, 1)"}
+                iconImg={vector2}
+                iconAltTxt="Total Transactions"
+                content={SampleOutput[0].main.humidity}
+                caption={"Average Humidity"}
+              />
+              {/* <Itemscard
+                iconColor={"rgba(236, 164, 164, 1)"}
+                iconImg={vector3}
+                iconAltTxt="Average Temperature"
+                // content={"88"}
+                content={avgTemp}
+                caption={"Average Temperature (in ℃)"}
+              />
+              <Itemscard
+                iconColor={"rgba(169, 176, 229, 1)"}
+                iconImg={vector4}
+                iconAltTxt="Feels Like"
+                // content={"88"}
+                content={avgFeelsTemp}
+                caption={"Feels Like (in ℃)"}
+              /> */}
+            </>
+          )}
         </div>
 
         {/* green rgba(127, 205, 147, 1) */}
         {/* yellow rgba(222, 191, 133, 1) */}
         {/* red rgba(236, 164, 164, 1) */}
         {/* purple rgba(169, 176, 229, 1) */}
-        <Activities
+        {/* <Activities
           city1name={SampleOutput[0].name}
           city2name={SampleOutput[1].name}
           city3name={SampleOutput[2].name}
-          city1data={SampleOutput[0].main}
-          city2data={SampleOutput[1].main}
-          city3data={SampleOutput[2].main}
-        />
+          // city1data={SampleOutput[0].main}
+          // city2data={SampleOutput[1].main}
+          // city3data={SampleOutput[2].main}
+
+            // city1name={cityData[0].name}
+            // city2name={cityData[1].name}
+            // city3name={cityData[2].name}
+            // city1data={cityData[0].main}
+            // city2data={cityData[1].main}
+            // city3data={cityData[2].main}
+        /> */}
         <div className="flex flex-row justify-between">
           <div className="top-products w-6/12 mr-4 h-100 px-10 py-6 bg-white border-and-shadow-box rounded-xl shadow-xl p-3 ">
             <TopProducts />
