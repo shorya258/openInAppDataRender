@@ -184,7 +184,7 @@ function Dashboard() {
           <div className="top-products w-6/12 mr-4 h-100 px-10 py-6 bg-white rounded-xl shadow-xl p-3 ">
             <TopProducts />
           </div>
-          <div className="add-profile w-6/12 ml-4 h-100 bg-white rounded-xl shadow-xl ">
+          <div className="add-profile-wrapper w-6/12 ml-4 h-100 bg-white rounded-xl shadow-xl ">
             <AddProfile />
           </div>
         </div>
