@@ -2,10 +2,14 @@ import React, { useState, useEffect } from "react";
 import "./addprofile.css";
 import addProfile from "./assets/addProfile.png";
 import ModalForm from "./ModalForm";
+import whatsapp_icon from "./assets/whatsapp_icon.png";
+import mail_icon from "./assets/mail_icon.png";
+import ig_icon from "./assets/ig_icon.png";
+import yt_icon from "./assets/yt_icon.png";
 // import AddProfileForm from "./AddProfileForm";
 function AddProfile() {
   const [showProfileForm, setShowProfileForm] = useState(false);
-  const [showProfileInfo, setShowProfileInfo] = useState({});
+  const [showProfileInfo, setShowProfileInfo] = useState(null);
   const fetchData = async () => {
     let userEmail = localStorage.getItem("userEmail");
 
@@ -17,8 +21,11 @@ function AddProfile() {
       body: JSON.stringify({ email: userEmail }),
     });
     let parsedData = await response.json();
-    console.log(parsedData);
-    setShowProfileInfo(parsedData);
+    if (parsedData !== null) {
+      console.log("pdata", parsedData.body.profile_data);
+      setShowProfileInfo(parsedData.body.profile_data);
+      console.log("showProfileInfo", showProfileInfo);
+    }
   };
   useEffect(() => {
     fetchData();
@@ -55,7 +62,48 @@ function AddProfile() {
           {showProfileForm && <ModalForm onClose={onClose}></ModalForm>}
         </>
       )}
-      {showProfileInfo && <h1>{showProfileInfo.name}</h1>}
+      {showProfileInfo && (
+        <>
+          <h1 className="font-bold mb-4 "> {showProfileInfo.name}</h1>
+          <div className="profile-info flex flex-row ">
+            {showProfileInfo.ph_number && (
+              <div className="flex flex-row-2">
+                <span>
+                  <img src={whatsapp_icon} alt="whatsapp_icon" />
+                </span>
+                {showProfileInfo.ph_number}
+              </div>
+            )}
+
+            {showProfileInfo.email && (
+              <div className="flex flex-row">
+                <span>
+                  <img src={mail_icon} alt="mail_icon" />
+                </span>
+                {showProfileInfo.email}
+              </div>
+            )}
+
+            {showProfileInfo.yt_link && (
+              <div className="flex flex-row">
+                <span>
+                  <img src={yt_icon} alt="yt_icon" />
+                </span>
+                {showProfileInfo.yt_link}
+              </div>
+            )}
+
+            {showProfileInfo.ig_link && (
+              <div className="flex flex-row">
+                <span>
+                  <img src={ig_icon} alt="ig_icon" />
+                </span>
+                {showProfileInfo.ig_link}
+              </div>
+            )}
+          </div>
+        </>
+      )}
     </div>
   );
 }
