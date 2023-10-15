@@ -88,26 +88,25 @@
     font-weight: 400;
 }
 @media screen and (max-width:650px){
-    .sign-in-content-wrapper{
-        display: flex;
-        flex-direction: column-reverse;
+    .sign-in-panel {
+        max-width : 300px ;
     }
-    .sign-in-form-wrapper{
-        position:absolute ;
-        width: 300px;
-        left:10%
+    .sign-in-header {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .sign-in-form-wrapper::before{
         position:relative ;
     }
     .g-sign-in-wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
     .g-sign-in-wrapper > button {
+        height: 40px;
+        margin-bottom: 0.5rem;
         padding-left: 0rem !important;
         padding-right: 0rem !important;
         border-radius: 1rem !important;
@@ -115,7 +114,7 @@
     }
     .g-sign-in-wrapper span {
         color: #949494 !important;
-        font-size: 0.7rem;
+        font-size: 0.5rem;
         font-weight: 400;
     }
     .sign-up-link{
