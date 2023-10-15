@@ -6,6 +6,8 @@ import whatsapp_icon from "./assets/whatsapp_icon.png";
 import mail_icon from "./assets/mail_icon.png";
 import ig_icon from "./assets/ig_icon.png";
 import yt_icon from "./assets/yt_icon.png";
+import AddProfileIcon from "../Components/assets/addProfile.svg";
+
 // import AddProfileForm from "./AddProfileForm";
 function AddProfile() {
   const [showProfileForm, setShowProfileForm] = useState(false);
@@ -45,13 +47,10 @@ function AddProfile() {
         <div className="add-profile-icon-div mx-auto my-auto w-auto flex flex-col justify-center items-center">
           <button
             variant="contained"
-            component="label" 
+            component="label"
             onClick={handleAddProfile}
           >
-            <img
-              src={addProfile}
-              alt="add profile"
-            />
+            <img src={AddProfileIcon} alt="add profile" />
           </button>
           <p className="mt-3">Add profile</p>
           {showProfileForm && <ModalForm onClose={onClose}></ModalForm>}
