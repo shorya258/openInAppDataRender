@@ -12,6 +12,10 @@ import transactionsIcon from "../Components/assets/transaction_icon.svg";
 import schedulesIcon from "../Components/assets/schedule_icon.svg";
 import settingIcon from "../Components/assets/setting_icon.svg";
 import userIcon from "../Components/assets/user_icon.svg";
+import vector1 from "../Components/assets/vector1.svg";
+import vector2 from "../Components/assets/vector2.svg";
+import vector3 from "../Components/assets/vector3.svg";
+import vector4 from "../Components/assets/vector4.svg";
 
 // import { useEffect } from "react";
 // require("dotenv").config();
@@ -133,16 +137,39 @@ function Dashboard() {
         </div>
         <div className=" flex flex-row item-cards-wrapper">
           <Itemscard
+            iconColor={"rgba(127, 205, 147, 1)"}
+            iconImg={vector1}
+            iconAltTxt="Average Visbility"
             content={SampleOutput[0].visibility}
             caption={"Average Visbility"}
           />
           <Itemscard
+            iconColor={"rgba(222, 191, 133, 1)"}
+            iconImg={vector2}
+            iconAltTxt="Total Transactions"
             content={SampleOutput[0].main.humidity}
             caption={"Total Transactions"}
           />
-          <Itemscard content={avg_temp} caption={"Average Temperature"} />
-          <Itemscard content={temp_feels} caption={"Feels Like"} />
+          <Itemscard
+            iconColor={"rgba(236, 164, 164, 1)"}
+            iconImg={vector3}
+            iconAltTxt="Average Temperature"
+            content={avg_temp}
+            caption={"Average Temperature"}
+          />
+          <Itemscard
+            iconColor={"rgba(169, 176, 229, 1)"}
+            iconImg={vector4}
+            iconAltTxt="Feels Like"
+            content={temp_feels}
+            caption={"Feels Like"}
+          />
         </div>
+
+        {/* green rgba(127, 205, 147, 1) */}
+        {/* yellow rgba(222, 191, 133, 1) */}
+        {/* red rgba(236, 164, 164, 1) */}
+        {/* purple rgba(169, 176, 229, 1) */}
         <div className="activites">
           <Activities
             city1name={SampleOutput[0].name}
