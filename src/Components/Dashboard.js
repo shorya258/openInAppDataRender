@@ -45,38 +45,38 @@ function Dashboard() {
     3;
 
   return (
-    <div className="flex justify-between flex-row w-screen h-screen border-solid border-2 border-sky-500 background-style p-10">
+    <div className="flex justify-between flex-row w-screen h-screen border-solid background-style p-10">
       <div
-        className="w-2/12 menu rounded-xl h-100 text-white border-solid border-2 border-sky-500 mr-10"
+        className="w-2/12 menu rounded-xl h-100 text-white border-solid mr-10"
         style={{ backgroundColor: "rgb(62, 132, 248)" }}
       >
         <div className="menu-items-wrapper my-10 px-8">
-          <h1 className="text-4xl">Board.</h1>
-          <div className="flex flex-col gap-5 my-10">
-            <div>
+          <h1 className="text-4xl font-bold">Board.</h1>
+          <div className="flex flex-col gap-8 my-10">
+            <div className="flex gap-4">
               <img src={dashboardIcon} alt="dashboardIcon" />
-              <h2>Dashboard</h2>
+              <h2 className="font-bold">Dashboard</h2>
             </div>
-            <div>
+            <div className="flex gap-4">
               <img src={transactionsIcon} alt="transactionsIcon" />
               <h2>Transactions</h2>
             </div>
-            <div>
+            <div className="flex gap-4">
               <img src={schedulesIcon} alt="schedulesIcon" />
               <h2>Schedules</h2>
             </div>
-            <div>
+            <div className="flex gap-4">
               <img src={userIcon} alt="userIcon" />
               <h2>Users</h2>
             </div>
-            <div>
+            <div className="flex gap-4">
               <img src={settingIcon} alt="settingIcon" />
               <h2>Settings</h2>
             </div>
           </div>
         </div>
       </div>
-      <div className="flex flex-col justify-between w-10/12 dashboard-wrapper border-solid border-2 border-sky-500 ">
+      <div className="flex flex-col justify-between w-10/12 dashboard-wrapper border-solid ">
         <div className="flex flex-row items-center justify-between">
           <h1 className="dashboard-heading"> Dashboard</h1>
           <div className="flex flex-row items-center ">
@@ -135,7 +135,7 @@ function Dashboard() {
             ></img>
           </div>
         </div>
-        <div className=" flex flex-row item-cards-wrapper">
+        <div className=" flex flex-row justify-between gap-5 item-cards-wrapper">
           <Itemscard
             iconColor={"rgba(127, 205, 147, 1)"}
             iconImg={vector1}

@@ -1,0 +1,30 @@
+.item-card-img-div {
+  margin-bottom: 0.5rem;
+  height: 30px;
+}
+.item-card {
+  border-radius: 1.25rem;
+  border: 2px solid #e0e0e0;
+}
+.item-card-img {
+  padding: 0.4rem;
+  width: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.item-card-caption {
+  font-size: 0.7rem;
+  font-family: var(--second-font);
+}
+.item-card-stat {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.item-card-growth {
+  background-color: #e9f9eb;
+  color: #4ad15f;
+  font-size: 0.625rem;
+  font-weight: 600;
+  border-radius: 2rem;
+  padding: 0.25rem 0.5rem;
+}
