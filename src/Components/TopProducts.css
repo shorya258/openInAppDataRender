@@ -1,6 +1,12 @@
+.donut-chart:first-child{
+    width: 300px !important;
+    z-index: 1;
+}
+
 .product-legend > img {
-    width: 10px;
+    width: 10px; 
     height: 10px;
+    z-index: 10;
 }
 .products-subhead-wrapper > p {
     font-size: 0.75rem;

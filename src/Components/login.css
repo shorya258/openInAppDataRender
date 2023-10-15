@@ -87,3 +87,31 @@
     font-family: var(--second-font);
     font-weight: 400;
 }
+@media screen and (max-width:650px){
+    .sign-in-form-wrapper{
+        position:absolute ;
+        width: 300px;
+        left:10%
+    }
+    .sign-in-form-wrapper::before{
+        position:relative ;
+    }
+    .g-sign-in-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    .g-sign-in-wrapper > button {
+        padding-left: 0rem !important;
+        padding-right: 0rem !important;
+        border-radius: 1rem !important;
+        box-shadow: none !important;
+    }
+    .g-sign-in-wrapper span {
+        color: #949494 !important;
+        font-size: 0.7rem;
+        font-weight: 400;
+    }
+}

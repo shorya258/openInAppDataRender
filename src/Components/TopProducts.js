@@ -36,10 +36,10 @@ function TopProducts() {
   };
   return (
     <>
-    <div className="products-subhead-wrapper flex flex-row justify-between">
-    <h1 className="dashboard-sub-heading">TopProducts</h1>
-    <p>May - June 2021</p>
-    </div>
+      <div className="products-subhead-wrapper flex flex-row justify-between">
+        <h1 className="dashboard-sub-heading">TopProducts</h1>
+        <p>May - June 2021</p>
+      </div>
 
       <div className="flex flex-row items-center justify-between top-products-wrapper">
         <Doughnut className="doughnut" data={data} options={options}></Doughnut>

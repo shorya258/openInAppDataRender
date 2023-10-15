@@ -16,10 +16,11 @@ import vector1 from "../Components/assets/vector1.svg";
 import vector2 from "../Components/assets/vector2.svg";
 import vector3 from "../Components/assets/vector3.svg";
 import vector4 from "../Components/assets/vector4.svg";
-
+import { useNavigate } from "react-router-dom";
 // import { useEffect } from "react";
 // require("dotenv").config();
 function Dashboard() {
+  let navigate = useNavigate();
   // let API_KEY = "d28b937e8b237af8a5e4e15379047501";
   // let API_KEY = process.env.REACT_APP_APIKEY;
   // console.log(`${process.env.REACT_APP_APIKEY}`);
@@ -43,7 +44,13 @@ function Dashboard() {
       SampleOutput[1].main.feels_like +
       SampleOutput[2].main.feels_like) /
     3;
-
+  const handleLogout = () => {
+    // localStorage.removeItem("authToken");
+    localStorage.clear();
+    sessionStorage.clear();
+    console.log("local storage cleared out");
+    navigate("/");
+  };
   return (
     <div className="flex justify-between flex-row w-screen h-screen border-solid background-style p-10">
       <div
@@ -73,6 +80,9 @@ function Dashboard() {
               <img src={settingIcon} alt="settingIcon" />
               <h2>Settings</h2>
             </div>
+          </div>
+          <div style={{ top: 30 }}>
+            <button onClick={handleLogout}>Log out</button>
           </div>
         </div>
       </div>
