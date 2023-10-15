@@ -86,9 +86,9 @@ function Dashboard() {
     navigate("/");
   };
   return (
-    <div className="flex justify-between flex-row w-screen h-screen border-solid background-style p-10">
+    <div className="flex justify-between flex-row w-screen h-screen border-solid p-10">
       <div
-        className="w-2/12 menu rounded-xl h-100 text-white border-solid mr-12"
+        className="w-2/12 dashboard-menu rounded-xl h-100 text-white border-solid mr-12"
         style={{ backgroundColor: "rgb(62, 132, 248)" }}
       >
         <div className="flex flex-col justify-between menu-items-wrapper py-10 px-8 h-full">
@@ -226,7 +226,7 @@ function Dashboard() {
         {/* red rgba(236, 164, 164, 1) */}
         {/* purple rgba(169, 176, 229, 1) */}
         <Activities cityData={cityData} />
-        <div className="flex flex-row justify-between">
+        <div className="products-box-wrapper flex flex-row justify-between">
           <div className="top-products w-6/12 mr-4 h-100 px-10 py-6 bg-white border-and-shadow-box rounded-xl shadow-xl p-3 ">
             <TopProducts />
           </div>
