@@ -40,27 +40,22 @@ function AddProfile() {
   };
 
   return (
-    <div className="add-profile-wrapper">
+    <>
       {showProfileInfo == null && (
-        <>
+        <div className="add-profile-icon-div mx-auto my-auto w-auto flex flex-col justify-center items-center">
           <button
             variant="contained"
-            component="label"
+            component="label" 
             onClick={handleAddProfile}
           >
-            <input />
             <img
               src={addProfile}
               alt="add profile"
-              className="grid grid-cols-2 gap-4 place-content-center"
             />
-            <div>
-              {" "}
-              <p>Add profile</p>
-            </div>
           </button>
+          <p className="mt-3">Add profile</p>
           {showProfileForm && <ModalForm onClose={onClose}></ModalForm>}
-        </>
+        </div>
       )}
       {showProfileInfo && (
         <>
@@ -104,7 +99,7 @@ function AddProfile() {
           </div>
         </>
       )}
-    </div>
+    </>
   );
 }
 

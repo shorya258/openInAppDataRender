@@ -1,9 +1,9 @@
 .add-profile-wrapper {
-    height: auto;
-    width:auto;
-    border:solid black 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border:solid black 1px; */
 }
-.add-profile-wrapper button img{
+.add-profile-icon-div > button > img {
     width: 100px;
-    height: auto;
 }
