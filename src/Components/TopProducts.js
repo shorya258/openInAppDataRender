@@ -28,7 +28,7 @@ function TopProducts() {
   return (
     <>
       <div>TopProducts</div>
-      <div style={{ width: "100%" }}>
+      <div>
         <Doughnut data={data} options={options}></Doughnut>
       </div>
     </>
