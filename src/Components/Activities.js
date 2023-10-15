@@ -9,24 +9,30 @@ import {
 } from "chart.js";
 
 import { Bar } from "react-chartjs-2";
-import Legend1 from "../Components/assets/legend1.svg"
-import Legend2 from "../Components/assets/legend2.svg"
+import Legend1 from "../Components/assets/legend1.svg";
+import Legend2 from "../Components/assets/legend2.svg";
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
 function Activities(props) {
-  let city1name = props.city1name;
-  let city2name = props.city2name;
-  let city3name = props.city3name;
-  let city1temp = [props.city1data.temp_min, props.city1data.temp_max];
-  let city2temp = [props.city2data.temp_min, props.city2data.temp_max];
-  let city3temp = [props.city3data.temp_min, props.city3data.temp_max];
+  console.log("props", props);
+  let minTempArray = props.cityData?.map(
+    (city) => Number(city.main.temp_min) - 273
+  );
+  let maxTempArray = props.cityData?.map(
+    (city) => Number(city.main.temp_max) - 273
+  );
+  let cityNames = props.cityData?.map((city) => city.name);
+
+  console.log("minTempArray", minTempArray);
+  console.log("maxTempArray", maxTempArray);
+  console.log("cityNames", cityNames);
   const data = {
-    labels: [city1name, city2name, city3name],
+    labels: cityNames,
     datasets: [
       {
         label: "Max temperature",
-        data: [city1temp[0], city2temp[0], city3temp[0]],
+        data: maxTempArray,
         backgroundColor: " rgba(152, 216, 158, 1)",
         borderColor: "white",
         borderWidth: "1",
@@ -36,7 +42,7 @@ function Activities(props) {
       },
       {
         label: "Min temperature",
-        data: [city1temp[1], city2temp[1], city3temp[1]],
+        data: minTempArray,
         backgroundColor: " rgba(238, 132, 132, 1)",
         borderColor: "white",
         borderWidth: "1",
@@ -55,7 +61,7 @@ function Activities(props) {
       y: {
         beginAtZero: true,
         ticks: {
-          stepSize: 100,
+          stepSize: 10,
         },
       },
       x: {
@@ -75,12 +81,12 @@ function Activities(props) {
         </div>
         <div className="flex flex-row activities-legend">
           <div className="flex flex-row items-center legend ml-2">
-            <img src={Legend1} alt="img1"/>
+            <img src={Legend1} alt="img1" />
             <p>Min Temp.</p>
           </div>
 
           <div className="flex flex-row items-center legend ml-2">
-            <img src={Legend2} alt="img2"/>
+            <img src={Legend2} alt="img2" />
             <p>Max Temp.</p>
           </div>
         </div>
