@@ -3,6 +3,7 @@ import "./login.css";
 import { Link } from "react-router-dom";
 import GLogin from "./GLogin";
 import { useNavigate } from "react-router-dom";
+import appleLogIn from "./assets/appleSignIn.svg";
 function Login(props) {
   let navigate = useNavigate();
   const [credentials, setCredentials] = useState({
@@ -46,7 +47,9 @@ function Login(props) {
       <div className="sign-in-content-wrapper">
         <div className="g-sign-in-wrapper">
           <GLogin />
-          <GLogin />
+          <div className="apple-login">
+            <img src={appleLogIn} alt="apple log in button" />
+          </div>
         </div>
 
         <div>
@@ -109,6 +112,7 @@ function Login(props) {
             <a
               onClick={props.handleIsLoginChange}
               style={{ cursor: "pointer" }}
+              href="/"
             >
               {" "}
               Register here

@@ -56,7 +56,7 @@ function AddProfile() {
         </div>
       )}
       {showProfileInfo && (
-        <div className="flex flex-col justify-evenly h-full w-5/6 py-6 px-4 show-profile-info">
+        <div className="flex flex-col justify-evenly h-full py-6 px-8 show-profile-info">
           <h1 className="font-bold mt-2"> {showProfileInfo.name}</h1>
           <div className="profile-info grid grid-cols-2 grid-rows-2 gap-6 my-6">
             {showProfileInfo.ph_number && (

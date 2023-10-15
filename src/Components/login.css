@@ -96,6 +96,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        color: #ffffff;
     }
     .sign-in-form-wrapper::before{
         position:relative ;
@@ -105,12 +106,18 @@
         margin-bottom: 1rem;
     }
     .g-sign-in-wrapper > button {
-        height: 40px;
+        height: 2rem;
         margin-bottom: 0.5rem;
         padding-left: 0rem !important;
         padding-right: 0rem !important;
         border-radius: 1rem !important;
         box-shadow: none !important;
+    }
+    .g-sign-in-wrapper > button :first-child{
+        height: 1.8rem;
+        border-radius: 40% !important;
+        margin-bottom: 2px !important;
+        margin-right: 1px !important;
     }
     .g-sign-in-wrapper span {
         color: #949494 !important;
@@ -118,6 +125,12 @@
         font-weight: 400;
     }
     .sign-up-link{
-        margin-top: 1px;
+        margin-top: 1rem;
+    }
+    .sign-up-link p{
+        color: #ffffff;
+    }
+    .sign-up-link > a{
+        color: rgb(216, 216, 77) !important;
     }
 }
