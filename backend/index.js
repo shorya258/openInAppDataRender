@@ -19,6 +19,7 @@ app.use(express.json());
 app.use("/api", require("./routes/auth"));
 app.use("/api", require("./routes/addProfile"));
 app.use("/api", require("./routes/findProfileByEmail"));
+app.use("/api", require("./routes/authProfileByGoogle"));
 app.get("/", (req, res) => {
   res.send("Hello worlddd");
 });

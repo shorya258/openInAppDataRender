@@ -22,6 +22,17 @@ function Dashboard() {
   //   }
   //   fetchData();
   // });
+  const avg_temp =
+    (SampleOutput[0].main.temp +
+      SampleOutput[1].main.temp +
+      SampleOutput[2].main.temp) /
+    3;
+
+  const temp_feels =
+    (SampleOutput[0].main.feels_like +
+      SampleOutput[1].main.feels_like +
+      SampleOutput[2].main.feels_like) /
+    3;
 
   return (
     <div className="flex justify-between flex-row w-screen h-screen border-solid border-2 border-sky-500 background-style p-10">
@@ -92,14 +103,24 @@ function Dashboard() {
               />
             </svg>
 
-            <img className="stock-image ml-6" src={stockPhoto} alt="stock"></img>
+            <img
+              className="stock-image ml-6"
+              src={stockPhoto}
+              alt="stock"
+            ></img>
           </div>
         </div>
         <div className=" flex flex-row item-cards-wrapper">
-          <Itemscard content={"Total Resources"} />
-          <Itemscard content={"Total Transactions"} />
-          <Itemscard content={"Total Likes"} />
-          <Itemscard content={"Total Users"} />
+          <Itemscard
+            content={SampleOutput[0].visibility}
+            caption={"Average Visbility"}
+          />
+          <Itemscard
+            content={SampleOutput[0].main.humidity}
+            caption={"Total Transactions"}
+          />
+          <Itemscard content={avg_temp} caption={"Average Temperature"} />
+          <Itemscard content={temp_feels} caption={"Feels Like"} />
         </div>
         <div className="activites">
           <Activities
