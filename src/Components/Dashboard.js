@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+
+import { GoogleLogout } from "react-google-login";
+
 import "./dashboard.css";
 import Itemscard from "./Itemscard";
 import Activities from "./Activities";
@@ -21,6 +24,10 @@ import { useNavigate } from "react-router-dom";
 // require("dotenv").config();
 function Dashboard() {
   let navigate = useNavigate();
+  const clientId =
+    "980512281451-t9ppbk7qgsg0qmejr2c06vl0f7p53bpg.apps.googleusercontent.com";
+  const [isGoogleLogin, setIsGoogleLogin] = useState(false);
+
   // let API_KEY = "d28b937e8b237af8a5e4e15379047501";
   // let API_KEY = process.env.REACT_APP_APIKEY;
   // console.log(`${process.env.REACT_APP_APIKEY}`);
@@ -45,6 +52,9 @@ function Dashboard() {
       SampleOutput[2].main.feels_like) /
     3;
   const handleLogout = () => {
+    if (localStorage.getItem("googleAuthToken") !== null) {
+      setIsGoogleLogin(true);
+    }
     // localStorage.removeItem("authToken");
     localStorage.clear();
     sessionStorage.clear();
@@ -82,7 +92,10 @@ function Dashboard() {
             </div>
           </div>
           <div style={{ top: 30 }}>
-            <button onClick={handleLogout}>Log out</button>
+            <button onClick={handleLogout}>
+              {isGoogleLogin && <div>dude!</div>}
+              Log out
+            </button>
           </div>
         </div>
       </div>
