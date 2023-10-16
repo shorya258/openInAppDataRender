@@ -22,7 +22,6 @@
     margin-bottom: 2rem;
 }
 .g-sign-in-wrapper > button {
-    max-height:33px ;
     padding-left: 0.5rem !important;
     padding-right: 0.5rem !important;
     border-radius: 0.6rem !important;
@@ -110,17 +109,14 @@
         margin-bottom: 1rem;
     }
     .g-sign-in-wrapper > button {
-        height: 2rem;
         margin-bottom: 0.5rem;
         padding-left: 0rem !important;
         padding-right: 0rem !important;
-        border-radius: 1rem !important;
+        border-radius: 2rem !important;
         box-shadow: none !important;
     }
     .g-sign-in-wrapper > button :first-child{
-        height: 1.8rem;
         border-radius: 40% !important;
-        margin-bottom: 2px !important;
         margin-right: 1px !important;
     }
     .g-sign-in-wrapper span {
