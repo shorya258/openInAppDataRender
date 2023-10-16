@@ -22,6 +22,7 @@
 }
 .profile-info p {
     text-decoration: underline;
+    word-break: break-all;
 }
 .modal-form-header {
     /* margin-bottom: 1rem; */
