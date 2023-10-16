@@ -6,13 +6,14 @@ import Legend2 from "../Components/assets/legend2.svg";
 import Legend3 from "../Components/assets/legend3.svg";
 import "./TopProducts.css";
 ChartJS.register(ArcElement, Tooltip, Legend);
-function TopProducts() {
+function TopProducts(props) {
+  let weatherArray = props.cityData?.map((city) => Number(city.weather.main));
   const data = {
-    labels: ["yes", "no", "maybe"],
+    labels: weatherArray,
     datasets: [
       {
         label: "Poll",
-        data: [8, 5, 2],
+        data: [2, 2, 2],
         backgroundColor: [
           "rgba(152, 216, 158, 1)",
           "rgba(238, 132, 132, 1)",
@@ -44,21 +45,21 @@ function TopProducts() {
           <div className="product-legend flex flex-row items-baseline">
             <img src={Legend2} alt="img2" />
             <div className="product-legend-text">
-              <h3>Basic Tees</h3>
+              <h3>Cloudy</h3>
               <p>31%</p>
             </div>
           </div>
           <div className="product-legend flex flex-row items-baseline">
             <img src={Legend3} alt="img3" />
             <div className="product-legend-text">
-              <h3>Custom Short Pants</h3>
+              <h3>Sunny</h3>
               <p>31%</p>
             </div>
           </div>
           <div className="product-legend flex flex-row items-baseline">
             <img src={Legend1} alt="img1" />
             <div className="product-legend-text">
-              <h3>Super Hoodies</h3>
+              <h3>Rainy</h3>
               <p>31%</p>
             </div>
           </div>

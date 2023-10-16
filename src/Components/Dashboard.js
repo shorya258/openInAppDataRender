@@ -228,7 +228,7 @@ function Dashboard() {
         <Activities cityData={cityData} />
         <div className="products-box-wrapper flex flex-row justify-between">
           <div className="top-products w-6/12 mr-4 h-100 px-10 py-6 bg-white border-and-shadow-box rounded-xl shadow-xl p-3 ">
-            <TopProducts />
+            <TopProducts cityData={cityData} />
           </div>
           <div className="add-profile-wrapper w-6/12 ml-4 h-100 bg-white border-and-shadow-box rounded-xl shadow-xl ">
             <AddProfile />
