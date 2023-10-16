@@ -67,8 +67,8 @@ function Login(props) {
       </div>
       <div className="sign-in-content-wrapper">
         <div className="g-sign-in-wrapper">
-          <GLogin />
-          <GLogin />
+          {/* <GLogin />
+          <GLogin /> */}
         </div>
 
         <div>
