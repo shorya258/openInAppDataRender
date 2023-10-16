@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import GoogleLogin from "react-google-login";
 function GLogin() {
   const navigate = useNavigate();
+  const apiUrl = process.env.REACT_APP_BACKEND_API_URL;
 
   const clientId = process.env.REACT_APP_CLIENT_ID;
   const onSuccess = (res) => {
@@ -10,7 +11,7 @@ function GLogin() {
   };
 
   const handleSendCreds = async (profObj) => {
-    const response = await fetch("http://localhost:5000/api/loginByGoogle", {
+    const response = await fetch(`${apiUrl}/api/loginByGoogle`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

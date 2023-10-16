@@ -8,13 +8,15 @@ import yt_icon from "./assets/yt_icon.png";
 import AddProfileIcon from "../Components/assets/addProfile.svg";
 
 // import AddProfileForm from "./AddProfileForm";
+
 function AddProfile() {
   const [showProfileForm, setShowProfileForm] = useState(false);
   const [showProfileInfo, setShowProfileInfo] = useState(null);
+  const apiUrl = process.env.REACT_APP_BACKEND_API_URL;
   const fetchData = async () => {
     let userEmail = localStorage.getItem("userEmail");
 
-    let response = await fetch("http://localhost:5000/api/findProfileByEmail", {
+    let response = await fetch(`${apiUrl}/api/findProfileByEmail`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

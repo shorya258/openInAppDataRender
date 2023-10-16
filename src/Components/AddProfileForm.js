@@ -9,13 +9,15 @@ function AddProfileForm(props) {
     ig_link: "",
     yt_link: "",
   });
+  const apiUrl = process.env.REACT_APP_BACKEND_API_URL;
+
   const handleSubmit = async () => {
     let userEmail = localStorage.getItem("userEmail");
     let reqData = {
       email: userEmail,
       profile_data: newProfileCredentials,
     };
-    await fetch("http://localhost:5000/api/profileData", {
+    await fetch(`${apiUrl}/api/profileData`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
