@@ -4,9 +4,7 @@ import GoogleLogin from "react-google-login";
 function GLogin() {
   const navigate = useNavigate();
 
-  const clientId =
-    "980512281451-t9ppbk7qgsg0qmejr2c06vl0f7p53bpg.apps.googleusercontent.com";
-
+  const clientId = process.env.REACT_APP_CLIENT_ID;
   const onSuccess = (res) => {
     console.log("LOGIN SUCCESS! current user:", res.profileObj);
     handleSendCreds(res.profileObj);
