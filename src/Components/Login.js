@@ -11,7 +11,7 @@ function Login(props) {
   const apiUrl = process.env.REACT_APP_BACKEND_API_URL;
 
   useEffect(() => {
-    appleLogin();
+    // appleLogin();
   }, []);
 
   const handleSubmit = async (e) => {
