@@ -24,6 +24,7 @@ function TopProducts(props) {
     ],
   };
   const options = {
+    maintainAspectRatio: false,
     aspectRatio: 3,
     cutout: 60,
     plugins: {
@@ -39,24 +40,24 @@ function TopProducts(props) {
         <p>May - June 2021</p>
       </div>
 
-      <div className="flex flex-row items-center justify-between top-products-wrapper">
+      <div className="flex flex-row items-center justify-evenly top-products-wrapper">
         <Doughnut className="doughnut" data={data} options={options}></Doughnut>
         <div className="product-legends flex flex-col w-6/12">
-          <div className="product-legend flex flex-row items-baseline">
+          <div className="product-legend flex flex-row justify-center items-baseline">
             <img src={Legend2} alt="img2" />
             <div className="product-legend-text">
               <h3>Cloudy</h3>
               <p>31%</p>
             </div>
           </div>
-          <div className="product-legend flex flex-row items-baseline">
+          <div className="product-legend flex flex-row justify-center items-baseline">
             <img src={Legend3} alt="img3" />
             <div className="product-legend-text">
               <h3>Sunny</h3>
               <p>31%</p>
             </div>
           </div>
-          <div className="product-legend flex flex-row items-baseline">
+          <div className="product-legend flex flex-row justify-center items-baseline">
             <img src={Legend1} alt="img1" />
             <div className="product-legend-text">
               <h3>Rainy</h3>
