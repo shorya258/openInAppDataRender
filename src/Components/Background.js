@@ -10,7 +10,6 @@ function Background() {
 
   const handleIsLoginChange = () => {
     setIsLogin(!isLogin);
-    console.log("handle called");
   };
   return (
     <div className="flex flex-row h-screen w-auto items-center place-content-center mx-auto background-style ">

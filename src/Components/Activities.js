@@ -16,7 +16,6 @@ import {isMobile} from "react-device-detect"
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
 function Activities(props) {
-  console.log("props", props);
   let minTempArray = props.cityData?.map(
     (city) => Number(city.main.temp_min) - 273
   );
@@ -25,9 +24,6 @@ function Activities(props) {
   );
   let cityNames = props.cityData?.map((city) => city.name);
 
-  console.log("minTempArray", minTempArray);
-  console.log("maxTempArray", maxTempArray);
-  console.log("cityNames", cityNames);
   const data = {
     labels: cityNames,
     datasets: [

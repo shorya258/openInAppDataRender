@@ -8,7 +8,6 @@ function GLogin() {
     "980512281451-t9ppbk7qgsg0qmejr2c06vl0f7p53bpg.apps.googleusercontent.com";
 
   const onSuccess = (res) => {
-    console.log("LOGIN SUCCESS! current user:", res.profileObj);
     handleSendCreds(res.profileObj);
   };
 

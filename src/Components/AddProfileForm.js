@@ -15,15 +15,13 @@ function AddProfileForm(props) {
       email: userEmail,
       profile_data: newProfileCredentials,
     };
-    console.log(reqData);
-    let response = await fetch("http://localhost:5000/api/profileData", {
+    await fetch("http://localhost:5000/api/profileData", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(reqData),
     });
-    console.log("order response::::", response);
     props.onClose();
   };
   const onChange = (e) => {
