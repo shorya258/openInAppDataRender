@@ -6,7 +6,6 @@ function GLogin() {
 
   const clientId = process.env.REACT_APP_CLIENT_ID;
   const onSuccess = (res) => {
-    console.log("LOGIN SUCCESS! current user:", res.profileObj);
     handleSendCreds(res.profileObj);
   };
 

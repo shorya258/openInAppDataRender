@@ -22,9 +22,7 @@
 }
 .profile-info p {
     text-decoration: underline;
-}
-.modal-form-header {
-    /* margin-bottom: 1rem; */
+    word-break: break-all;
 }
 .modal-switch-btn {
     width: 43%;

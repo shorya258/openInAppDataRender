@@ -23,7 +23,6 @@ import { useNavigate } from "react-router-dom";
 function Dashboard(props) {
   let navigate = useNavigate();
 
-  const [isGoogleLogin, setIsGoogleLogin] = useState(false);
   const [avgTemp, setAvgTemp] = useState(0);
   const [avgFeelsTemp, setFeelsTemp] = useState(0);
   let API_KEY = props.apiKey;
@@ -129,7 +128,6 @@ function Dashboard(props) {
             <button>Help</button>
             <button>Contact Us</button>
             <button onClick={handleLogout}>
-              {isGoogleLogin && <div>dude!</div>}
               Log out
             </button>
           </div>

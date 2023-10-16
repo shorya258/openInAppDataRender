@@ -21,7 +21,6 @@ function Signup(props) {
       }),
     });
     const json = await response.json();
-    console.log("DONE", json);
     if (!json.success) {
       alert("enter valid credentials");
     }

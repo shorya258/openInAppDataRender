@@ -27,15 +27,12 @@ function Login(props) {
       }),
     });
     const json = await response.json();
-    console.log("DONE", json);
     if (!json.success) {
       alert("enter valid credentials");
     }
     if (json.success) {
       localStorage.setItem("userEmail", credentials.email);
       localStorage.setItem("authToken", json.authToken);
-      let item = localStorage.getItem("authToken");
-      console.log("yo", item);
       navigate("/dashboard");
     }
   };
