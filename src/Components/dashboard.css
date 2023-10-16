@@ -112,5 +112,19 @@
         font-size: 1rem !important;
         text-align: center;
     }
-
+    .dashboard-heading {
+        font-size: 1.1rem;
+    }
+    .dashboard-top-form {
+        margin-left: 0.2rem;
+    }
+    .dashboard-top-form > label {
+        font-size: 0.6rem;
+    }
+    .dashboard-top-form input {
+        padding-left: 1rem;
+    }
+    .product-legend-text > h3 {
+        font-size: 0.6rem !important;
+    }
 }
