@@ -2,7 +2,7 @@ import React from "react";
 import "./itemscard.css";
 function Itemscard(props) {
   return (
-    <div className="flex flex-col item-card bg-white rounded-xl shadow-xl px-5 py-3 flex-1">
+    <div className="flex flex-col item-card justify-between bg-white rounded-xl shadow-xl px-5 py-3 flex-1">
       <div className="item-card-img-div">
         <img
           src={props.iconImg}

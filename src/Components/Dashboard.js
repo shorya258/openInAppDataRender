@@ -17,6 +17,8 @@ import vector1 from "../Components/assets/vector1.svg";
 import vector2 from "../Components/assets/vector2.svg";
 import vector3 from "../Components/assets/vector3.svg";
 import vector4 from "../Components/assets/vector4.svg";
+import MenuIcon from "../Components/assets/hamburger-menu.svg";
+import CloseIcon from "../Components/assets/close_icon.svg";
 import { useNavigate } from "react-router-dom";
 // require("dotenv").config();
 function Dashboard() {
@@ -79,6 +81,11 @@ function Dashboard() {
       setFeelsTemp(temp_feels);
     }
   };
+  const openMobileDashBoardMenu = () => {
+    document
+      .querySelector(".dashboard-menu")
+      ?.classList.toggle("dashboard-menu-visible");
+  };
   const handleLogout = () => {
     localStorage.clear();
     sessionStorage.clear();
@@ -93,7 +100,11 @@ function Dashboard() {
       >
         <div className="flex flex-col justify-between menu-items-wrapper py-10 px-8 h-full">
           <div>
-            <h1 className="text-4xl font-bold">Board.</h1>
+            <div className="flex flex-row justify-between">
+              <h1 className="text-4xl font-bold ">Board.</h1>
+              <img src={CloseIcon} className="closeIcon-menu" alt="dashboardIcon" onClick={openMobileDashBoardMenu} />
+            </div>
+
             <div className="flex flex-col gap-8 my-10">
               <div className="dashboard-menu-links flex gap-4">
                 <img src={dashboardIcon} alt="dashboardIcon" />
@@ -178,7 +189,12 @@ function Dashboard() {
                 fill="black"
               />
             </svg>
-
+            <img
+              className="menu-icon ml-6"
+              src={MenuIcon}
+              onClick={openMobileDashBoardMenu}
+              alt="Menu-Icon"
+            />
             <img
               className="stock-image ml-6"
               src={stockPhoto}
