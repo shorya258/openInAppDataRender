@@ -13,7 +13,7 @@ function TopProducts(props) {
     datasets: [
       {
         label: "Poll",
-        data: [2, 2, 2],
+        data: [1, 5, 4],
         backgroundColor: [
           "rgba(152, 216, 158, 1)",
           "rgba(238, 132, 132, 1)",
@@ -47,21 +47,21 @@ function TopProducts(props) {
             <img src={Legend2} alt="img2" />
             <div className="product-legend-text">
               <h3>Cloudy</h3>
-              <p>31%</p>
+              <p>10%</p>
             </div>
           </div>
           <div className="product-legend flex flex-row justify-center items-baseline">
             <img src={Legend3} alt="img3" />
             <div className="product-legend-text">
               <h3>Sunny</h3>
-              <p>31%</p>
+              <p>50%</p>
             </div>
           </div>
           <div className="product-legend flex flex-row justify-center items-baseline">
             <img src={Legend1} alt="img1" />
             <div className="product-legend-text">
               <h3>Rainy</h3>
-              <p>31%</p>
+              <p>40%</p>
             </div>
           </div>
         </div>

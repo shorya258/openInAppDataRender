@@ -1,18 +1,13 @@
 import "./App.css";
 import Background from "./Components/Background";
-// import Login from "./Components/Login";
-// import Logout from "./Components/GLogout";
-// import Signup from "./Components/Signup";
 import { gapi } from "gapi-script";
 import { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Dashboard from "./Components/Dashboard";
-// require("react-dotenv").config();
-// Route, Routes
-const clientId =
-  "980512281451-t9ppbk7qgsg0qmejr2c06vl0f7p53bpg.apps.googleusercontent.com";
+const clientId = process.env.REACT_APP_CLIENT_ID;
 function App() {
-  // console.log(`${process.env.REACT_APP_APIKEY}`);
+  let apiKey = process.env.REACT_APP_API_KEY;
+  console.log(`react api key${process.env.REACT_APP_API_KEY}`);
   useEffect(() => {
     function start() {
       gapi.client.init({
@@ -27,7 +22,11 @@ function App() {
     <Router>
       <Routes>
         <Route exact path="/" element={<Background />} />
-        <Route exact path="/dashboard" element={<Dashboard />} />
+        <Route
+          exact
+          path="/dashboard"
+          element={<Dashboard apiKey={apiKey} />}
+        />
       </Routes>
     </Router>
   );

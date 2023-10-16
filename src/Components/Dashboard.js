@@ -18,16 +18,13 @@ import vector2 from "../Components/assets/vector2.svg";
 import vector3 from "../Components/assets/vector3.svg";
 import vector4 from "../Components/assets/vector4.svg";
 import { useNavigate } from "react-router-dom";
-// require("dotenv").config();
-function Dashboard() {
+function Dashboard(props) {
   let navigate = useNavigate();
 
   const [isGoogleLogin, setIsGoogleLogin] = useState(false);
   const [avgTemp, setAvgTemp] = useState(0);
   const [avgFeelsTemp, setFeelsTemp] = useState(0);
-  let API_KEY = "d28b937e8b237af8a5e4e15379047501";
-  // let API_KEY = process.env.REACT_APP_APIKEY;
-  // console.log(`${process.env.REACT_APP_APIKEY}`);
+  let API_KEY = props.apiKey;
 
   const [cityData, setCityData] = useState([]);
 
