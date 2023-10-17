@@ -4,7 +4,7 @@
     border-radius: 1.25rem;
 }
 .bar-chart-wrapper {
-    height: 200px !important;
+    height: 120px !important;
     width: 100% !important;
 }
 .stock-image {
@@ -23,6 +23,7 @@
 }
 .dashboard-menu-links > h2 {
     font-size: 1.125rem;
+    word-break: break-all;
 }
 .menu-bottom-links {
     font-size: 0.875rem;
