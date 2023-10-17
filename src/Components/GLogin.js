@@ -1,13 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import GoogleLogin from "react-google-login";
+import jwt_decode from "jwt-decode";
+import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 function GLogin() {
   const navigate = useNavigate();
   const apiUrl = process.env.REACT_APP_BACKEND_API_URL;
 
   const clientId = process.env.REACT_APP_CLIENT_ID;
   const onSuccess = (res) => {
-    handleSendCreds(res.profileObj);
+    var decoded = jwt_decode(res.credential);
+    handleSendCreds(decoded);
+    console.log(decoded);
   };
 
   const handleSendCreds = async (profObj) => {
@@ -18,7 +21,7 @@ function GLogin() {
       },
       body: JSON.stringify({
         email: profObj.email,
-        givenName: profObj.givenName,
+        name: profObj.givenName,
       }),
     });
     const json = await response.json();
@@ -33,15 +36,13 @@ function GLogin() {
     }
   };
   return (
-    <GoogleLogin
-      clientId={clientId}
-      buttonText="Sign in with Google"
-      onSuccess={onSuccess}
-      onFailure={(err) => console.log("fail", err)}
-      cookiePolicy="single_host_origin"
-      isSignedIn={true}
-    />
+    <GoogleOAuthProvider clientId={clientId}>
+      <GoogleLogin
+        buttonText="Sign in with Google"
+        onSuccess={onSuccess}
+        onError={(err) => console.log("fail", err)}
+      />
+    </GoogleOAuthProvider>
   );
 }
-
 export default GLogin;

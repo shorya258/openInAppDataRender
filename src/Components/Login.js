@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./login.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import GLogin from "./GLogin";
 function Login(props) {
   let navigate = useNavigate();
   const [credentials, setCredentials] = useState({
@@ -66,8 +67,7 @@ function Login(props) {
       </div>
       <div className="sign-in-content-wrapper">
         <div className="g-sign-in-wrapper">
-          {/* <GLogin />
-          <GLogin /> */}
+          <GLogin />
         </div>
 
         <div>
