@@ -60,9 +60,9 @@ function AddProfile() {
         </div>
       )}
       {showProfileInfo && (
-        <div className="flex flex-col justify-evenly h-full py-6 px-8 show-profile-info">
+        <div className="flex flex-col justify-evenly h-full py-3 px-6 show-profile-info">
           <h1 className="font-bold mt-2"> {showProfileInfo.name}</h1>
-          <div className="profile-info grid grid-cols-2 grid-rows-2 gap-6 my-6">
+          <div className="profile-info grid grid-cols-2 grid-rows-2 gap-3 my-6">
             {showProfileInfo.ph_number && (
               <div className="flex flex-row items-center">
                 <img src={whatsapp_icon} alt="whatsapp_icon" />

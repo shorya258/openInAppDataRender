@@ -89,7 +89,7 @@ function Dashboard(props) {
     }, 2000);
   };
   return (
-    <div className="flex justify-between flex-row w-screen h-screen border-solid p-10">
+    <div className="flex justify-evenly flex-row w-screen h-screen border-solid p-7">
       <div
         className="w-2/12 dashboard-menu rounded-xl h-100 text-white border-solid mr-12"
         style={{ backgroundColor: "rgb(62, 132, 248)" }}
@@ -136,8 +136,8 @@ function Dashboard(props) {
           </div>
         </div>
       </div>
-      <div className="flex flex-col justify-between w-10/12 py-4 dashboard-wrapper border-solid ">
-        <div className="flex flex-row items-center justify-between mb-3">
+      <div className="flex flex-col justify-between w-10/12 py-3 dashboard-wrapper border-solid ">
+        <div className="flex flex-row items-center justify-between mb-1">
           <h1 className="dashboard-heading"> Dashboard</h1>
           <div className="flex flex-row items-center ">
             <form className="dashboard-top-form ml-6">
@@ -241,10 +241,10 @@ function Dashboard(props) {
         {/* purple rgba(169, 176, 229, 1) */}
         <Activities cityData={cityData} />
         <div className="products-box-wrapper flex flex-row justify-between">
-          <div className="top-products w-6/12 mr-4 h-100 px-10 py-6 bg-white border-and-shadow-box rounded-xl shadow-xl p-3 ">
+          <div className="top-products w-6/12 mr-4 px-10 pt-6 pb-3 bg-white border-and-shadow-box rounded-xl shadow-xl p-3 ">
             <TopProducts cityData={cityData} />
           </div>
-          <div className="add-profile-wrapper w-6/12 ml-4 h-100 bg-white border-and-shadow-box rounded-xl shadow-xl ">
+          <div className="add-profile-wrapper w-6/12 ml-4 bg-white border-and-shadow-box rounded-xl shadow-xl ">
             <AddProfile />
           </div>
         </div>
