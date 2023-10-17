@@ -1,4 +1,6 @@
 import React from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
@@ -28,11 +30,14 @@ function GLogin() {
 
     console.log("DONE GOOGLE LOGIN", json);
     if (!json.success) {
-      alert("enter valid credentials");
+      toast.error("enter valid credentials");
     }
     if (json.success) {
+      toast.success("You are logged in successfully!");
       localStorage.setItem("authToken", json.authToken);
-      navigate("/dashboard");
+      setTimeout(() => {
+        navigate("/dashboard");
+      }, 2000);
     }
   };
   return (
@@ -42,6 +47,7 @@ function GLogin() {
         onSuccess={onSuccess}
         onError={(err) => console.log("fail", err)}
       />
+      <ToastContainer />
     </GoogleOAuthProvider>
   );
 }

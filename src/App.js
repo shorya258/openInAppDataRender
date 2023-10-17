@@ -7,7 +7,6 @@ import Dashboard from "./Components/Dashboard";
 const clientId = process.env.REACT_APP_CLIENT_ID;
 function App() {
   let apiKey = process.env.REACT_APP_API_KEY;
-  console.log(`react api key${process.env.REACT_APP_API_KEY}`);
   useEffect(() => {
     function start() {
       gapi.client.init({

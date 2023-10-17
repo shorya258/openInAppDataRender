@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import validator from "validator";
+import isUrl from "is-url";
 function AddProfileForm(props) {
   const [toggleBasicToSocial, setToggleBasicToSocial] = useState(true);
   const [newProfileCredentials, setNewProfileCredentials] = useState({
@@ -9,9 +10,53 @@ function AddProfileForm(props) {
     ig_link: "",
     yt_link: "",
   });
-  const apiUrl = process.env.REACT_APP_BACKEND_API_URL;
+  const [errorsObj, setErrorsObj] = useState();
 
+  const apiUrl = process.env.REACT_APP_BACKEND_API_URL;
+  const validateCredentials = (creds) => {
+    const generatedErrors = {};
+    var errorFound = false;
+    if (creds.name.trim().length === 0) {
+      generatedErrors.name = "*Name can not be empty!";
+      setToggleBasicToSocial(true);
+      errorFound = true;
+    } else if (creds.name.trim().length <= 3) {
+      generatedErrors.name = "*Name should contain more than 3 letters!";
+      setToggleBasicToSocial(true);
+      errorFound = true;
+    }
+    if (creds.email.trim().length === 0) {
+      generatedErrors.email = "*Email can not be empty!";
+      setToggleBasicToSocial(true);
+      errorFound = true;
+    } else if (!validator.isEmail(creds.email.trim())) {
+      generatedErrors.email = "*Enter a valid Email address!";
+      setToggleBasicToSocial(true);
+      errorFound = true;
+    }
+    if (creds.ph_number.trim().length === 0) {
+      generatedErrors.ph_number = "*Phone number can not be empty!";
+      setToggleBasicToSocial(true);
+      errorFound = true;
+    } else if (!validator.isMobilePhone(creds.ph_number)) {
+      generatedErrors.ph_number = "*Invalid Phone number!";
+      setToggleBasicToSocial(true);
+      errorFound = true;
+    }
+    if (creds.ig_link.trim().length > 0 && !isUrl(creds.ig_link.trim())) {
+      generatedErrors.ig_link = "*Enter a valid link!";
+      errorFound = true;
+    }
+    if (creds.yt_link.trim().length > 0 && !isUrl(creds.yt_link.trim())) {
+      generatedErrors.yt_link = "*Enter a valid link!";
+      errorFound = true;
+    }
+    setErrorsObj(generatedErrors);
+    return errorFound;
+  };
   const handleSubmit = async () => {
+    if (validateCredentials(newProfileCredentials)) return;
+    console.log("handle submit called!");
     let userEmail = localStorage.getItem("userEmail");
     let reqData = {
       email: userEmail,
@@ -25,9 +70,14 @@ function AddProfileForm(props) {
       body: JSON.stringify(reqData),
     });
     props.onClose();
+    console.log("props closed");
   };
   const onChange = (e) => {
     setNewProfileCredentials({
+      ...newProfileCredentials,
+      [e.target.name]: e.target.value,
+    });
+    validateCredentials({
       ...newProfileCredentials,
       [e.target.name]: e.target.value,
     });
@@ -95,6 +145,9 @@ function AddProfileForm(props) {
                       />
                     </div>
                   </div>
+                  {errorsObj !== undefined && errorsObj.name !== undefined && (
+                    <legend className="error-dialog">{errorsObj.name}</legend>
+                  )}
                 </div>
 
                 {/* EMAIL */}
@@ -115,6 +168,9 @@ function AddProfileForm(props) {
                       />
                     </div>
                   </div>
+                  {errorsObj !== undefined && errorsObj.email !== undefined && (
+                    <legend className="error-dialog">{errorsObj.email}</legend>
+                  )}
                 </div>
                 {/* Phone Number */}
                 <div className="sm:col-span-6">
@@ -134,6 +190,12 @@ function AddProfileForm(props) {
                       />
                     </div>
                   </div>
+                  {errorsObj !== undefined &&
+                    errorsObj.ph_number !== undefined && (
+                      <legend className="error-dialog">
+                        {errorsObj.ph_number}
+                      </legend>
+                    )}
                 </div>
               </div>
             </form>
@@ -163,6 +225,9 @@ function AddProfileForm(props) {
                     />
                   </div>
                 </div>
+                {errorsObj !== undefined && errorsObj.ig_link !== undefined && (
+                  <legend className="error-dialog">{errorsObj.ig_link}</legend>
+                )}
               </div>
 
               {/* YOUTUBE LINK */}
@@ -187,6 +252,9 @@ function AddProfileForm(props) {
                     />
                   </div>
                 </div>
+                {errorsObj !== undefined && errorsObj.yt_link !== undefined && (
+                  <legend className="error-dialog">{errorsObj.yt_link}</legend>
+                )}
               </div>
             </div>
           </div>

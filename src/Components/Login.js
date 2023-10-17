@@ -1,22 +1,45 @@
 import React, { useEffect, useState } from "react";
+import validator from "validator";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./login.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import GLogin from "./GLogin";
+import ALogin from "./ALogin";
 function Login(props) {
   let navigate = useNavigate();
   const [credentials, setCredentials] = useState({
     email: "",
     password: "",
   });
+  const [errorsObj, setErrorsObj] = useState();
   const apiUrl = process.env.REACT_APP_BACKEND_API_URL;
 
   useEffect(() => {
     // appleLogin();
   }, []);
-
+  const validateCredentials = (creds) => {
+    const generatedErrors = {};
+    var errorFound = false;
+    if (creds.email.trim().length === 0) {
+      generatedErrors.email = "*Email can not be empty!";
+      errorFound = true;
+    } else if (!validator.isEmail(creds.email.trim())) {
+      generatedErrors.email = "*Enter a valid Email address!";
+      errorFound = true;
+    }
+    if (creds.password.length === 0) {
+      generatedErrors.password = "*Password can not be empty!";
+      errorFound = true;
+    }
+    setErrorsObj(generatedErrors);
+    return errorFound;
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (validateCredentials(credentials)) return;
+    toast.loading("Logging in!");
     const response = await fetch(`${apiUrl}/api/login`, {
       method: "POST",
       headers: {
@@ -28,13 +51,17 @@ function Login(props) {
       }),
     });
     const json = await response.json();
+    toast.dismiss();
     if (!json.success) {
-      alert("enter valid credentials");
+      toast.error("Enter valid credentials!");
     }
     if (json.success) {
+      toast.success("Logged in successfully!");
       localStorage.setItem("userEmail", credentials.email);
       localStorage.setItem("authToken", json.authToken);
-      navigate("/dashboard");
+      setTimeout(() => {
+        navigate("/dashboard");
+      }, 3000);
     }
   };
   const appleLogin = () => {
@@ -58,6 +85,7 @@ function Login(props) {
   };
   const onChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
+    validateCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
   return (
     <div className="sign-in-panel">
@@ -68,6 +96,7 @@ function Login(props) {
       <div className="sign-in-content-wrapper">
         <div className="g-sign-in-wrapper">
           <GLogin />
+          <ALogin />
         </div>
 
         <div>
@@ -91,6 +120,9 @@ function Login(props) {
                       placeholder="abc@xyz.com"
                     />
                   </div>
+                  {errorsObj !== undefined && errorsObj.email !== undefined && (
+                    <legend className="error-dialog">{errorsObj.email}</legend>
+                  )}
                 </div>
                 <div className="sm:col-span-6">
                   <label
@@ -110,6 +142,12 @@ function Login(props) {
                       placeholder="password"
                     />
                   </div>
+                  {errorsObj !== undefined &&
+                    errorsObj.password !== undefined && (
+                      <legend className="error-dialog">
+                        {errorsObj.password}
+                      </legend>
+                    )}
                 </div>
               </div>
               <div className="forgot-password">
@@ -123,18 +161,19 @@ function Login(props) {
               >
                 Sign In
               </button>
+              <ToastContainer />
             </form>
           </div>
           <div className="sign-up-link">
             <p>Don't have an account?</p>
-            <a
+            <button
               onClick={props.handleIsLoginChange}
               style={{ cursor: "pointer" }}
               href="/"
             >
               {" "}
               Register here
-            </a>
+            </button>
           </div>
         </div>
       </div>

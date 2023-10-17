@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-// import { GoogleLogout } from "react-google-login";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./dashboard.css";
 import Itemscard from "./Itemscard";
 import Activities from "./Activities";
@@ -30,11 +30,9 @@ function Dashboard(props) {
   const [cityData, setCityData] = useState([]);
 
   async function fetchData(lati, longi) {
-    console.log("fetchdata called");
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lati}&lon=${longi}&appid=${API_KEY}`;
     let data = await fetch(url);
     let parsedData = await data.json();
-    console.log("parsed data", parsedData);
     setCityData((cityData) => {
       calculateTemp([...cityData, parsedData]);
       return [...cityData, parsedData];
@@ -56,7 +54,6 @@ function Dashboard(props) {
     }
   }, []);
   const calculateTemp = (cityData) => {
-    console.log("calc temp", cityData);
     if (cityData.length === 5) {
       let avg_temp = 0;
       let total_temp = 0;
@@ -64,7 +61,6 @@ function Dashboard(props) {
         total_temp += city.main.temp;
       });
       avg_temp = Math.floor(total_temp / 5) - 273;
-      console.log(avg_temp);
       setAvgTemp(avg_temp);
 
       total_temp = 0;
@@ -86,7 +82,11 @@ function Dashboard(props) {
     localStorage.clear();
     sessionStorage.clear();
     console.log("local storage cleared out");
-    navigate("/");
+    toast.success("Logged out successfully!");
+
+    setTimeout(() => {
+      navigate("/");
+    }, 2000);
   };
   return (
     <div className="flex justify-between flex-row w-screen h-screen border-solid p-10">
@@ -98,7 +98,12 @@ function Dashboard(props) {
           <div>
             <div className="flex flex-row justify-between">
               <h1 className="text-4xl font-bold ">Board.</h1>
-              <img src={CloseIcon} className="closeIcon-menu" alt="dashboardIcon" onClick={openMobileDashBoardMenu} />
+              <img
+                src={CloseIcon}
+                className="closeIcon-menu"
+                alt="dashboardIcon"
+                onClick={openMobileDashBoardMenu}
+              />
             </div>
 
             <div className="flex flex-col gap-8 my-10">
@@ -127,9 +132,7 @@ function Dashboard(props) {
           <div className="menu-bottom-links flex flex-col items-start gap-2">
             <button>Help</button>
             <button>Contact Us</button>
-            <button onClick={handleLogout}>
-              Log out
-            </button>
+            <button onClick={handleLogout}>Log out</button>
           </div>
         </div>
       </div>
@@ -155,9 +158,9 @@ function Dashboard(props) {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
                     />
                   </svg>
@@ -246,6 +249,7 @@ function Dashboard(props) {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 }

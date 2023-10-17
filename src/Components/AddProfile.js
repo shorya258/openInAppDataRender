@@ -12,6 +12,7 @@ import AddProfileIcon from "../Components/assets/addProfile.svg";
 function AddProfile() {
   const [showProfileForm, setShowProfileForm] = useState(false);
   const [showProfileInfo, setShowProfileInfo] = useState(null);
+
   const apiUrl = process.env.REACT_APP_BACKEND_API_URL;
   const fetchData = async () => {
     let userEmail = localStorage.getItem("userEmail");
@@ -39,6 +40,7 @@ function AddProfile() {
   };
   const onClose = () => {
     setShowProfileForm(false);
+    console.log("form closed!");
     fetchData();
   };
 

@@ -1,16 +1,48 @@
 import { useState } from "react";
 import React from "react";
+import validator from "validator";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function Signup(props) {
   const [credentials, setCredentials] = useState({
     name: "",
     email: "",
     password: "",
   });
+  const [errorsObj, setErrorsObj] = useState();
+
   const [showAccountCreated, setShowAccountCreated] = useState(false);
   const apiUrl = process.env.REACT_APP_BACKEND_API_URL;
-
+  const validateCredentials = (creds) => {
+    const generatedErrors = {};
+    var errorFound = false;
+    if (creds.name.trim().length === 0) {
+      generatedErrors.name = "*Name can not be empty!";
+      errorFound = true;
+    } else if (creds.name.trim().length <= 3) {
+      generatedErrors.name = "*Name should contain more than 3 letters!";
+      errorFound = true;
+    }
+    if (creds.email.trim().length === 0) {
+      generatedErrors.email = "*Email can not be empty!";
+      errorFound = true;
+    } else if (!validator.isEmail(creds.email.trim())) {
+      generatedErrors.email = "*Enter a valid Email address!";
+      errorFound = true;
+    }
+    if (creds.password.length === 0) {
+      generatedErrors.password = "*Password can not be empty!";
+      errorFound = true;
+    } else if (creds.password.trim().length <= 3) {
+      generatedErrors.name = "*Password is too short!";
+      errorFound = true;
+    }
+    setErrorsObj(generatedErrors);
+    return errorFound;
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (validateCredentials(credentials)) return;
     const response = await fetch(`${apiUrl}/api/signup`, {
       method: "POST",
       headers: {
@@ -24,10 +56,12 @@ function Signup(props) {
     });
     const json = await response.json();
     if (!json.success) {
-      alert("enter valid credentials");
+      toast.error("enter valid credentials");
     }
 
     setTimeout(() => {
+      toast.success("Account created successfully!");
+
       setShowAccountCreated(true);
       setTimeout(() => {
         props.handleIsLoginChange();
@@ -36,6 +70,7 @@ function Signup(props) {
   };
   const onChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
+    validateCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
   return (
     <div className="sign-in-panel">
@@ -64,6 +99,9 @@ function Signup(props) {
                   placeholder="Full Name"
                 />
               </div>
+              {errorsObj !== undefined && errorsObj.name !== undefined && (
+                <legend className="error-dialog ">{errorsObj.name}</legend>
+              )}
             </div>
 
             {/* EMAIL */}
@@ -84,6 +122,9 @@ function Signup(props) {
                   placeholder="email@abc.com"
                 />
               </div>
+              {errorsObj !== undefined && errorsObj.email !== undefined && (
+                <legend className="error-dialog">{errorsObj.email}</legend>
+              )}
             </div>
             {/* PASSWORD */}
             <div className="sm:col-span-6">
@@ -104,6 +145,9 @@ function Signup(props) {
                   placeholder="password"
                 />
               </div>
+              {errorsObj !== undefined && errorsObj.password !== undefined && (
+                <legend className="error-dialog">{errorsObj.password}</legend>
+              )}
             </div>
           </div>
           <button
@@ -115,14 +159,14 @@ function Signup(props) {
           </button>
           {showAccountCreated && (
             <div>
-              <p>Account Created!</p>
+              <ToastContainer />
             </div>
           )}
         </form>
       </div>
       <div className="sign-up-link">
         <p>Already have an account?</p>
-        <a onClick={props.handleIsLoginChange}> Sign In here</a>
+        <button onClick={props.handleIsLoginChange}> Sign In here</button>
       </div>
     </div>
   );

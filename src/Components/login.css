@@ -84,11 +84,15 @@
     font-family: var(--second-font);
     font-weight: 400;
 }
-.sign-up-link > a {
+.sign-up-link > button {
     color: #346BD4;
     margin-left: 2px;
     font-family: var(--second-font);
     font-weight: 400;
+}
+.error-dialog{
+    color: red;
+    font-size: 0.7rem;
 }
 @media screen and (max-width:850px){
     .sign-in-panel {
