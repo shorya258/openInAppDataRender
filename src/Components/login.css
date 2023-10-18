@@ -28,6 +28,10 @@
     box-shadow: none !important;
     width:170px !important;
 }
+.g-sign-in-wrapper *{
+    
+    border-color: white !important;
+}
 #appleid-signin {
     height: 100%;
     display: flex;
@@ -151,7 +155,7 @@
     .sign-up-link p{
         color: #ffffff;
     }
-    .sign-up-link > a{
+    .sign-up-link > button{
         color: rgb(216, 216, 77) !important;
     }
 }
