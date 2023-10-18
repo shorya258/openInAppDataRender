@@ -27,6 +27,16 @@
     border-radius: 0.6rem !important;
     box-shadow: none !important;
 }
+#appleid-signin {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+#appleid-signin  > img {
+    height: 90%;
+    width: 160px;
+    object-fit: cover
+}
 .g-sign-in-wrapper span {
     color: #949494 !important;
     font-size: 0.7rem;
@@ -95,6 +105,12 @@
     font-size: 0.7rem;
 }
 @media screen and (max-width:850px){
+    .g-sign-in-wrapper {
+        justify-content: center;
+    }
+    #appleid-signin {
+        display: none;
+    }
     .sign-in-panel {
         max-width : 300px ;
     }
