@@ -1,7 +1,7 @@
 import React from "react";
 import { createPortal } from "react-dom";
-import AddProfileForm from "./AddProfileForm";
 import { isMobile } from "react-device-detect";
+import AddProfileForm from "./AddProfileForm";
 const MODAL_STYLES = {
   position: "fixed",
   top: "50%",
