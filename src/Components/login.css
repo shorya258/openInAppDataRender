@@ -108,12 +108,6 @@
     font-size: 0.7rem;
 }
 @media screen and (max-width:850px){
-    .g-sign-in-wrapper {
-        justify-content: center;
-    }
-    #appleid-signin {
-        display: none;
-    }
     .sign-in-panel {
         max-width : 300px ;
     }
