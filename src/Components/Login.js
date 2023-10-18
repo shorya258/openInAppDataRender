@@ -77,7 +77,9 @@ function Login(props) {
       <div className="sign-in-content-wrapper">
         <div className="g-sign-in-wrapper">
           <GLogin />
-          <ALogin />
+          <div className="rounded-md ">
+            <ALogin />
+          </div>
         </div>
 
         <div>

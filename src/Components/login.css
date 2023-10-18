@@ -26,6 +26,7 @@
     padding-right: 0.5rem !important;
     border-radius: 0.6rem !important;
     box-shadow: none !important;
+    width:170px !important;
 }
 #appleid-signin {
     height: 100%;
@@ -34,7 +35,9 @@
 }
 #appleid-signin  > img {
     height: 90%;
-    width: 160px;
+    border: 1px solid rgb(245, 245, 245);
+    /* width: 210px; */
+    color: #949494 !important;
     object-fit: cover
 }
 .g-sign-in-wrapper span {
