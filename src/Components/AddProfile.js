@@ -48,7 +48,7 @@ function AddProfile() {
     <>
       {showProfileForm && <ModalForm onClose={onClose}></ModalForm>}
       {showProfileInfo == null && (
-        <div className="add-profile-icon-div mx-auto my-auto w-auto flex flex-col justify-center items-center">
+        <div className="add-profile-icon-div mx-auto my-auto w-auto flex flex-col justify-center items-center h-3/12">
           <button
             variant="contained"
             component="label"
@@ -60,7 +60,7 @@ function AddProfile() {
         </div>
       )}
       {showProfileInfo && (
-        <div className="flex flex-col justify-evenly h-full py-3 px-6 show-profile-info">
+        <div className="flex flex-col justify-evenly h-full py-3 px-6 show-profile-info h-3/12">
           <h1 className="font-bold mt-2"> {showProfileInfo.name}</h1>
           <div className="profile-info grid grid-cols-2 grid-rows-2 gap-3 my-6">
             {showProfileInfo.ph_number && (

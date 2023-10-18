@@ -36,7 +36,7 @@ function TopProducts(props) {
   return (
     <>
       <div className="products-subhead-wrapper flex flex-row justify-between">
-        <h1 className="dashboard-sub-heading">TopProducts</h1>
+        <h1 className="dashboard-sub-heading">Weather Probability</h1>
         <p>May - June 2021</p>
       </div>
 

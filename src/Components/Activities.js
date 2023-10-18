@@ -70,10 +70,10 @@ function Activities(props) {
     maintainAspectRatio: false,
   };
   return (
-    <div className="activities-wrapper border-and-shadow-box rounded-xl shadow-xl px-10 py-6">
+    <div className="activities-wrapper border-and-shadow-box rounded-xl shadow-xl px-10 py-6 h-6/12">
       <div className="flex flex-row justify-between items-end activities-heading-wrapper mb-6">
         <div className="activities-subhead-wrapper">
-          <h1 className="dashboard-sub-heading">Activities</h1>
+          <h1 className="dashboard-sub-heading">City Temperatures</h1>
           <p>May - June 2021</p>
         </div>
         <div className="flex flex-row activities-legend">

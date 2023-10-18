@@ -200,7 +200,7 @@ function Dashboard(props) {
             ></img>
           </div>
         </div>
-        <div className=" flex flex-row justify-between gap-5 item-cards-wrapper">
+        <div className=" flex flex-row justify-between gap-5 item-cards-wrapper h-3/12">
           {cityData.length > 0 && (
             <>
               <Itemscard

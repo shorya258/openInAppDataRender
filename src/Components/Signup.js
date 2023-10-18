@@ -65,8 +65,8 @@ function Signup(props) {
       setShowAccountCreated(true);
       setTimeout(() => {
         props.handleIsLoginChange();
-      }, 1500);
-    }, 1500);
+      }, 3000);
+    }, 3000);
   };
   const onChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
