@@ -1,5 +1,6 @@
 import React from "react";
 import { createPortal } from "react-dom";
+import { isMobile } from "react-device-detect";
 import AddProfileForm from "./AddProfileForm";
 const MODAL_STYLES = {
   position: "fixed",
@@ -8,8 +9,8 @@ const MODAL_STYLES = {
   backgroundColor: "rgb(248,250,255)",
   transform: "translate(-50%, -50%)",
   zIndex: 1000,
-  width : '500px',
-  borderRadius : '16px',
+  width: isMobile ? "300px" : "500px",
+  borderRadius: "16px",
 };
 const OVERLAY_STYLES = {
   position: "fixed",
